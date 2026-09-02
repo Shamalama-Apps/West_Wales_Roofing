@@ -5,3 +5,5 @@ dist/
 *.log
 .env
 .env.*
+bun.lock
+bun.lockb
