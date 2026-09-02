@@ -1,86 +1,88 @@
-# West Wales Roofing — task list
+# West Wales Roofing — priority queue
 
-Status key: `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked on Vanessa
+One ordered backlog. Work top to bottom: each task is either blocked by the one
+above it or simply matters more. Don't jump ahead — the ordering is deliberate.
 
----
-
-## 1. Repo & hosting
-
-- [x] Create project at `~/West_Wales_Roofing`
-- [x] Create GitHub repo `Shamalama-Apps/West_Wales_Roofing`
-- [x] Holding page shipped on GitHub Pages while the real site was built
-- [x] **Hosting moved to Netlify** so the CMS and contact form can work —
-      GitHub Pages serves static files only and can do neither
-- [x] Netlify project `west-wales-roofing` created and deployed
-- [!] Connect the GitHub repo to Netlify for continuous deployment (SETUP.md §1)
-- [ ] Retire GitHub Pages once DNS moves (SETUP.md §3)
-
-## 2. DNS (Spaceship control panel — Vanessa)
-
-Currently pointing at **GitHub Pages**, still serving the holding page.
-
-- [x] Parking records removed, GitHub `A` records and `www` CNAME added
-- [!] Repoint `@` and `www` at Netlify when the site is signed off (SETUP.md §3)
-- [ ] Confirm HTTPS once Netlify has issued the certificate
-
-⚠️ Only two of the four GitHub `A` records ever resolved (`.108.153`, `.109.153`).
-Moot once we move to Netlify, but worth knowing the panel may not have saved
-everything that was entered.
-
-## 3. Email (Spacemail)
-
-- [x] Spacemail `MX` records (`mx1`/`mx2.spacemail.com`) — added automatically
-- [x] Spacemail `SPF` record (`v=spf1 include:spf.spacemail.com ~all`)
-- [x] Site and form both use `will@west-wales-roofing.com`
-- [ ] Confirm the `DKIM` record exists in the Spaceship panel
-- [ ] Add a `DMARC` TXT record (`_dmarc`): start at `v=DMARC1; p=none; rua=...`
-- [ ] Send a test email in and out of `will@west-wales-roofing.com`
-- [ ] Check the first real form notification lands (and isn't filed as spam)
-
-## 4. Design
-
-- [x] Confirm business details — logo, `will@`, 07956 091794, five service areas
-- [x] Design canvas built in Claude Design (`West Wales Roofing.dc.html`)
-- [x] Convert the canvas to a real site — home, work, job detail, about, contact
-- [ ] ⚠️ Higher-res logo needed — supplied PNG is only 225×100, soft on retina. Ask for SVG or 3x
-- [ ] Favicon set from the logo (SVG, 16/32, apple-touch-icon)
-- [ ] Real photography — the site is a photo portfolio and every image is a placeholder
-
-## 5. Build — done
-
-- [x] Eleventy 3 static build, pre-rendered HTML for local SEO
-- [x] Home, Work (carousel), Job detail, About, Contact, Thanks, 404, sitemap
-- [x] Six seed jobs from the design; drafts render no page at all
-- [x] Decap CMS at `/admin` — jobs, photos, contact details, services
-- [x] GitHub OAuth handler (Git Gateway is deprecated, so we run our own)
-- [x] Netlify Forms wired to `will@west-wales-roofing.com`, tested end to end
-- [x] Deployed to https://west-wales-roofing.netlify.app
-
-## 6. Handover steps — see SETUP.md
-
-- [!] Connect the GitHub repo to Netlify (CMS publishes won't rebuild until this is done)
-- [!] Create the GitHub OAuth app and set `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET`
-- [!] Add Will as a repo collaborator so he can log into `/admin`
-- [!] Repoint DNS from GitHub Pages to Netlify, then disable Pages
-- [ ] Privacy policy — legally required now the form collects personal details
-
-## 7. Launch & marketing
-
-- [ ] Google Business Profile (huge for local trades)
-- [ ] Google Search Console — verify domain, submit sitemap
-- [ ] Local SEO: town pages if the service area stays broad
-- [ ] Checkatrade / TrustATrader listings if applicable
-- [ ] Insurance, guarantees and certifications shown on site
+**Owner:** 🧍 Vanessa (needs an account only she has) · 🤖 Claude · 🧍🤖 both
 
 ---
 
-## Open questions for Vanessa
+## Phase 1 — make the machine work (nothing else counts until these are done)
 
-1. **Trading name and legal entity** — limited company? Company number and
-   registered address are needed for the footer if so.
-2. **Insurance and certifications** — public liability cover, trade bodies?
-3. **Guarantee** — how many years on new roofs?
-4. **Will's real bio** — the About page copy is currently written from assumptions.
-5. **Service areas** — the design copy said Carmarthenshire, Ceredigion and north
-   Pembrokeshire; I've used your five (adding Swansea and Cardiff). Confirm which
-   is right, since it drives the local SEO.
+**1.** 🧍 **Connect the GitHub repo to Netlify.**
+Until this is done the site only updates when someone deploys from a laptop, and
+publishing from the CMS commits without rebuilding. Everything downstream assumes it.
+→ SETUP.md §1
+
+**2.** 🧍 **Create the GitHub OAuth app, set the two env vars.**
+The CMS login does not work at all without it. Git Gateway is deprecated, so this
+site runs its own handler.
+→ SETUP.md §2
+
+**3.** 🧍 **Add Will to the repo with Write access.**
+He needs a free GitHub account. If that's a dealbreaker, say so and I'll swap to
+DecapBridge (email/password) instead.
+
+**4.** 🧍🤖 **Spaceship API key, scoped to `dnsrecords:read` + `dnsrecords:write`.**
+Vanessa creates it in API Manager; Claude stores it in Keychain and uses it for
+every DNS task below. Not `domains:transfer`, not `domains:billing`.
+Optional — skip it and tasks 11–13 become manual instead.
+
+## Phase 2 — make the content true (before the domain points at it)
+
+**5.** 🧍 **Confirm the service areas.**
+The design copy says Carmarthenshire, Ceredigion and north Pembrokeshire. You said
+those three plus Swansea and Cardiff. Cheap to fix now, drives all the local SEO.
+
+**6.** 🧍 **Real photographs of real jobs.**
+The single biggest item. The whole site is built on the promise "every roof we
+finish goes on this site" and every image is currently a placeholder.
+
+**7.** 🧍 **Will's real bio and background.**
+The About page copy is invented from the design canvas. It reads plausibly, which
+makes it worse, not better.
+
+**8.** 🧍 **Legal and trust details.**
+Limited company? Company number and registered address for the footer. Public
+liability cover, trade bodies (NFRC, CompetentRoofer), guarantee length on new roofs.
+
+**9.** 🤖 **Privacy policy.** *(needs 8)*
+Legally required — the form collects names, numbers and addresses. Host as a
+directory so `/privacy` and `/privacy/` both resolve.
+
+**10.** 🧍🤖 **Higher-resolution logo, then a full favicon set.**
+The supplied PNG is 225×100 and looks soft on any modern screen. SVG ideally.
+
+## Phase 3 — go live
+
+**11.** 🧍🤖 **Repoint DNS from GitHub Pages to Netlify.** *(needs 1–10)*
+Deliberately last: a portfolio site with no photographs is worse than the holding
+page it replaces. Leave the Spacemail MX and SPF records alone.
+→ SETUP.md §3
+
+**12.** 🤖 **Retire GitHub Pages.** *(needs 11)*
+Disable Pages, delete the holding-page files from the repo root.
+
+**13.** 🧍🤖 **Finish the email records.** *(needs 4 or manual)*
+Confirm DKIM exists, add DMARC (`p=none` to start), send a test in and out of
+`will@`, and check the first real form notification isn't filed as spam.
+
+## Phase 4 — get found
+
+**14.** 🧍 **Google Business Profile.** Biggest single lever for a local trade.
+**15.** 🤖 **Google Search Console** — verify the domain, submit the sitemap.
+**16.** 🤖 **Town pages** for local SEO, if the service area stays this broad.
+**17.** 🧍 **Checkatrade / TrustATrader** listings, if worth the fee.
+
+---
+
+## Done
+
+- Project, repo `Shamalama-Apps/West_Wales_Roofing`, holding page shipped
+- Spacemail MX + SPF confirmed live; site and form both use `will@`
+- Design canvas converted to a full Eleventy site — home, work carousel, job
+  detail, about, contact, thanks, 404, sitemap
+- Six seed jobs; drafts render no page at all
+- Decap CMS at `/admin` with a GitHub OAuth handler of our own
+- Netlify Forms wired to `will@`, tested end to end and the test deleted
+- Deployed and verified: https://west-wales-roofing.netlify.app
