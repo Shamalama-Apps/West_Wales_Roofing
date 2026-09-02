@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Recent work
+description: Photographs of every roof we finish — re-roofs, new builds, flat roofs, historic slate and storm repairs across Carmarthenshire, Pembrokeshire and Ceredigion.
+permalink: /work/index.html
+---
+{% set jobs = collections.jobs %}
+
+<div class="wrap page-head">
+  <div>
+    <div class="eyebrow">Portfolio</div>
+    <h1>Recent work</h1>
+  </div>
+  <div class="count">{{ jobs.length }} jobs, newest first <span class="kbd-hint">&middot; use the arrows or &larr; &rarr; keys</span></div>
+</div>
+
+<section class="carousel" data-carousel aria-roledescription="carousel" aria-label="Recent jobs">
+  <div class="carousel-nav">
+    <button type="button" class="cbtn" data-prev aria-label="Previous job">&#8249;</button>
+    <button type="button" class="cbtn" data-next aria-label="Next job">&#8250;</button>
+  </div>
+  {% for job in jobs %}
+  <div class="slide{% if loop.first %} is-active{% endif %}" data-slide role="group" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ jobs.length }}"{% if not loop.first %} hidden{% endif %}>
+    <div class="slide-note">{{ job.data.photoLabel }}</div>
+    {% if job.data.hero %}<img class="slide-img" src="{{ job.data.hero }}" alt="{{ job.data.title }}">{% endif %}
+    <div class="wrap slide-in">
+      <div class="slide-card">
+        <div class="eyebrow eyebrow-red">{{ job.data.category }}</div>
+        <h2>{{ job.data.title }}</h2>
+        <p>{{ job.data.overview }}</p>
+        <div class="slide-specs">
+          <div><div class="k">System</div><div class="v">{{ job.data.system }}</div></div>
+          <div><div class="k">Size</div><div class="v">{{ job.data.size }}</div></div>
+          <div><div class="k">On site</div><div class="v">{{ job.data.duration }}</div></div>
+        </div>
+        <a class="btn btn-red" href="{{ job.url }}">See this job &rarr;</a>
+      </div>
+      <div class="slide-count">{{ loop.index | pad }} / {{ jobs.length | pad }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<div class="wrap dots">
+  {% for job in jobs %}
+  <button type="button" class="dot{% if loop.first %} is-on{% endif %}" data-dot aria-label="Go to job {{ loop.index }}: {{ job.data.title }}"></button>
+  {% endfor %}
+</div>
+
+<div class="wrap textwill">
+  <div class="textwill-in">
+    <div class="textwill-img"><span>portrait &mdash; {{ site.owner }}</span></div>
+    <div class="textwill-body">
+      <div>
+        <div class="eyebrow eyebrow-red">Seen something like your roof?</div>
+        <h2>Text {{ site.owner }} a photo of it.</h2>
+        <p>A picture from the ground is usually enough for him to tell you what he thinks it needs, and roughly what it costs. He answers the same day.</p>
+      </div>
+      <div class="textwill-actions">
+        <a class="btn btn-red" href="sms:{{ site.phoneLink }}">Text {{ site.phoneDisplay }}</a>
+        <a class="btn btn-line" href="tel:{{ site.phoneLink }}">Or ring instead</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/carousel.js" defer></script>

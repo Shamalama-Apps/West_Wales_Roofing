@@ -1,0 +1,87 @@
+backend:
+  name: github
+  repo: Shamalama-Apps/West_Wales_Roofing
+  branch: main
+  base_url: https://west-wales-roofing.com
+  auth_endpoint: api/auth
+
+media_folder: src/uploads
+public_folder: /uploads
+
+publish_mode: simple
+site_url: https://west-wales-roofing.com
+logo_url: https://west-wales-roofing.com/logo.png
+
+collections:
+  - name: jobs
+    label: Jobs
+    label_singular: Job
+    folder: src/jobs
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{location}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - label: Published
+        field: live
+        pattern: true
+      - label: Drafts
+        field: live
+        pattern: false
+    fields:
+      - { name: title, label: "Job title", widget: string, hint: "e.g. Farmhouse re-roof, Pencader" }
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - Residential re-roof
+          - New build
+          - Commercial / flat
+          - Historic slate & tile
+          - Storm & insurance repair
+      - { name: location, label: Location, widget: string, hint: "Town and county" }
+      - { name: system, label: "Roof system", widget: string, hint: "e.g. Welsh slate, lead valleys" }
+      - { name: size, label: "Job size", widget: string, hint: "e.g. 1,400 sq ft" }
+      - { name: duration, label: "Time on site", widget: string, hint: "e.g. 3 weeks" }
+      - { name: date, label: "Date finished", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { name: live, label: "Published on the site", widget: boolean, default: false, hint: "Leave off until you're happy with it. Drafts are not reachable on the website at all." }
+      - { name: featured, label: "Feature on the home page", widget: boolean, default: false }
+      - { name: overview, label: "Short summary", widget: text, hint: "One or two sentences. Shows on the cards and the job page." }
+      - { name: body, label: "Full write-up", widget: markdown, hint: "What the job involved." }
+      - { name: hero, label: "Main photo", widget: image, required: false, hint: "Used on the cards and the work carousel." }
+      - { name: before, label: "Before photo", widget: image, required: false }
+      - { name: after, label: "After photo", widget: image, required: false }
+      - name: gallery
+        label: "More photos"
+        widget: list
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - { name: image, label: Photo, widget: image }
+          - { name: caption, label: Caption, widget: string, required: false }
+      - { name: photoLabel, label: "Placeholder caption", widget: string, required: false, hint: "Only shown while there is no main photo." }
+
+  - name: settings
+    label: "Site details"
+    files:
+      - name: site
+        label: "Contact details and areas"
+        file: src/_data/site.json
+        fields:
+          - { name: name, label: "Business name", widget: string }
+          - { name: url, label: "Website address", widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: phoneDisplay, label: "Phone (as shown)", widget: string }
+          - { name: phoneLink, label: "Phone (for tap-to-call)", widget: string, hint: "No spaces, e.g. 07956091794" }
+          - { name: phoneIntl, label: "Phone (international)", widget: string, hint: "e.g. +447956091794" }
+          - { name: email, label: Email, widget: string }
+          - { name: owner, label: "Owner's first name", widget: string }
+          - { name: areasShort, label: "Areas (short)", widget: string }
+          - { name: areasLong, label: "Areas (long)", widget: string }
+          - { name: areasList, label: "Areas (list)", widget: list, field: { name: area, label: Area, widget: string } }
+          - name: services
+            label: "What we do"
+            widget: list
+            fields:
+              - { name: name, label: Service, widget: string }
+              - { name: note, label: "One-line description", widget: string }

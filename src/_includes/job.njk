@@ -1,0 +1,68 @@
+---
+layout: base.njk
+---
+{% set jobs = collections.jobs %}
+{% set idx = jobs | indexOfUrl(page.url) %}
+{% set nextJob = jobs | nextAfterUrl(page.url) %}
+
+<div class="wrap" style="padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+  <a class="sec-more" href="/work/">&larr; All work</a>
+  <div style="font:600 12px var(--disp);letter-spacing:.12em;color:var(--grey)">{{ (idx + 1) | pad }} / {{ jobs.length | pad }}</div>
+</div>
+
+<div class="wrap job-head">
+  <div class="eyebrow eyebrow-red">{{ category }}</div>
+  <h1>{{ title }}</h1>
+</div>
+
+<div class="wrap ba">
+  <div>
+    <div class="shot">{% if before %}<img src="{{ before }}" alt="{{ title }} before the work">{% endif %}</div>
+    <div class="label">Before</div>
+  </div>
+  <div>
+    <div class="shot">{% if after %}<img src="{{ after }}" alt="{{ title }} after the work">{% endif %}</div>
+    <div class="label after">After</div>
+  </div>
+</div>
+
+<div class="wrap job-body">
+  <div>
+    <p class="lede">{{ overview }}</p>
+    <div class="writeup">{{ content | safe }}</div>
+  </div>
+  <dl class="spec">
+    <div class="row"><dt>Roof system</dt><dd>{{ system }}</dd></div>
+    <div class="row"><dt>Job size</dt><dd>{{ size }}</dd></div>
+    <div class="row"><dt>Duration</dt><dd>{{ duration }}</dd></div>
+    <div class="row"><dt>Location</dt><dd>{{ location }}</dd></div>
+  </dl>
+</div>
+
+{% if gallery and gallery.length %}
+<div class="wrap gallery">
+  <div class="eyebrow">On the job</div>
+  <div class="gallery-grid">
+    {% for shot in gallery %}
+    <div class="shot"><img src="{{ shot.image }}" alt="{{ shot.caption or title }}" loading="lazy"></div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<a class="wrap next-job" href="{{ nextJob.url }}">
+  <div class="row">
+    <div>
+      <div class="eyebrow">Next job</div>
+      <div class="t">{{ nextJob.data.title }}</div>
+    </div>
+    <div class="arrow">&rarr;</div>
+  </div>
+</a>
+
+<section class="cta" style="margin-top:56px">
+  <div class="wrap cta-in">
+    <h2>Want work like this on your roof?</h2>
+    <a class="btn btn-white" href="/contact/">Get a quote</a>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+layout: base.njk
+title: Roofing in West Wales
+titleFull: "West Wales Roofing | Slate, Tile & Flat Roofs"
+description: Roofers covering Carmarthenshire, Pembrokeshire, Ceredigion, Swansea and Cardiff. Re-roofs, new builds, flat roofs, historic slate and storm damage. Free quotes — call 07956 091794.
+permalink: /index.html
+---
+{% set jobs = collections.jobs | featuredFirst %}
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-card">
+      <div class="eyebrow eyebrow-red">Slate &middot; Tile &middot; Flat &middot; West Wales</div>
+      <h1>Every roof we finish goes on this site.</h1>
+      <p>{{ jobs.length }} jobs on the books this year, photographed start to finish. Have a look at the work, then ring us.</p>
+      <div class="hero-actions">
+        <a class="btn btn-red" href="/work/">Browse the work</a>
+        <a class="btn btn-line" href="/contact/">Get a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="sec-head">
+    <h2>Recent jobs</h2>
+    <a class="sec-more" href="/work/">All {{ jobs.length }} jobs &rarr;</a>
+  </div>
+  <div class="job-grid">
+    {% for job in jobs | first(3) %}
+    <a class="job-card" href="{{ job.url }}">
+      <div class="job-thumb">
+        {% if job.data.hero %}<img src="{{ job.data.hero }}" alt="{{ job.data.title }}" loading="lazy">
+        {% else %}<span>{{ job.data.photoLabel }}</span>{% endif %}
+      </div>
+      <div class="job-cat">{{ job.data.category }}</div>
+      <div class="job-card-title">{{ job.data.title }}</div>
+      <p>{{ job.data.overview }}</p>
+      <div class="job-meta">{{ job.data.system }} &middot; {{ job.data.duration }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-in">
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2>A small firm, still run off the tools.</h2>
+      <p>{{ site.name }} is {{ site.owner }} and a small crew working across {{ site.areasLong }}. Slate, tile, flat roofs and storm work &mdash; on houses, farm buildings, chapels and commercial units.</p>
+      <p>{{ site.owner }} quotes every job himself and is on site for most of it. No subcontracted crews, no sales calls.</p>
+      <p style="margin-top:22px"><a class="sec-more" href="/about/">Read {{ site.owner }}'s story &rarr;</a></p>
+    </div>
+    <div>
+      <div class="eyebrow">What we do</div>
+      <div class="svc">
+        {% for s in site.services %}
+        <div class="row"><div class="name">{{ s.name }}</div><div class="note">{{ s.note }}</div></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Need a roof looked at?</h2>
+      <p>Free look, honest answer, written quote.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-white" href="tel:{{ site.phoneLink }}">Call {{ site.phoneDisplay }}</a>
+      <a class="btn btn-ghost" href="/contact/">Send an enquiry</a>
+    </div>
+  </div>
+</section>

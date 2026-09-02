@@ -1,0 +1,41 @@
+{
+  "name": "West Wales Roofing",
+  "url": "https://west-wales-roofing.com",
+  "tagline": "Slate, tile, flat and storm work across west Wales.",
+  "phoneDisplay": "07956 091794",
+  "phoneLink": "07956091794",
+  "phoneIntl": "+447956091794",
+  "email": "will@west-wales-roofing.com",
+  "owner": "Will",
+  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion",
+  "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion, plus Swansea and Cardiff",
+  "areasList": [
+    "Carmarthenshire",
+    "Pembrokeshire",
+    "Ceredigion",
+    "Swansea",
+    "Cardiff"
+  ],
+  "services": [
+    {
+      "name": "Residential re-roofs",
+      "note": "Full strip, new felt and battens, slate or tile"
+    },
+    {
+      "name": "New builds",
+      "note": "Roofed to your programme, dry verges and ridge"
+    },
+    {
+      "name": "Commercial & flat roofs",
+      "note": "Single-ply and felt systems, falls corrected"
+    },
+    {
+      "name": "Historic slate & tile",
+      "note": "Welsh slate, lead valleys, chapels and farm buildings"
+    },
+    {
+      "name": "Storm & insurance repair",
+      "note": "Made safe same day, photographs for the insurer"
+    }
+  ]
+}

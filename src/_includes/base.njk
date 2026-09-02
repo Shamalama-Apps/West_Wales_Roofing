@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% set pageTitle = titleFull if titleFull else title + " | " + site.name %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta name="theme-color" content="#c93c30">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image" content="{{ site.url }}/logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23c93c30'/%3E%3Cpath d='M12 38 32 20l20 18' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.url }}/logo.png",
+  "logo": "{{ site.url }}/logo.png",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phoneIntl }}",
+  "priceRange": "££",
+  "address": { "@type": "PostalAddress", "addressRegion": "Wales", "addressCountry": "GB" },
+  "areaServed": [{% for a in site.areasList %}{ "@type": "AdministrativeArea", "name": "{{ a }}" }{% if not loop.last %},{% endif %}{% endfor %}]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="head-logo" href="/"><img src="/logo.png" alt="{{ site.name }}" width="225" height="100"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="navlink" href="/work/"{% if page.url == "/work/" %} aria-current="page"{% endif %}>Work</a>
+      <a class="navlink" href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
+      <a class="navlink" href="/contact/"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact</a>
+      <a class="nav-tel" href="tel:{{ site.phoneLink }}">{{ site.phoneDisplay }}</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <div>
+      <img src="/logo.png" alt="{{ site.name }}" width="225" height="100">
+      <p class="foot-blurb">Slate, tile, flat and storm work across {{ site.areasLong }}.</p>
+    </div>
+    <div>
+      <div class="foot-k">Contact</div>
+      <div class="foot-list">
+        <a href="tel:{{ site.phoneLink }}">{{ site.phoneDisplay }}</a>
+        <a href="sms:{{ site.phoneLink }}">Text the same number</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-k">Pages</div>
+      <div class="foot-list">
+        <a href="/work/">Recent work</a>
+        <a href="/about/">About the firm</a>
+        <a href="/contact/">Contact</a>
+        <a class="quiet" href="/admin/">Owner login</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <div class="wrap">
+      <span>&copy; {{ build.year }} {{ site.name }}</span>
+      <span>Photographs of every finished job</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

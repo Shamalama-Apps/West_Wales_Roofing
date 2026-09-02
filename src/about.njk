@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: About the firm
+description: A small roofing firm run by Will, covering Carmarthenshire, Pembrokeshire, Ceredigion, Swansea and Cardiff. One job at a time, quoted and worked by the same hands.
+permalink: /about/index.html
+---
+{% set jobs = collections.jobs %}
+
+<div class="wrap about-top">
+  <div>
+    <div class="eyebrow eyebrow-red">About the firm</div>
+    <h1>Roofing in west Wales, one job at a time.</h1>
+    <p class="lede">{{ site.name }} covers {{ site.areasLong }}. Re-roofs, new builds, flat and commercial work, historic slate and tile, and storm damage handled through insurance.</p>
+    <p class="body">We keep the crew small on purpose. One job at a time means the roof gets stripped, felted, battened and covered by the same hands, and the site gets cleared before we leave.</p>
+    <div class="stats">
+      <div><div class="n">{{ jobs.length }}</div><div class="l">Jobs this year</div></div>
+      <div><div class="n">{{ site.areasList.length }}</div><div class="l">Areas covered</div></div>
+      <div><div class="n">1</div><div class="l">Job at a time</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="portrait"><span>portrait &mdash; {{ site.owner }} on site</span></div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="wrap founder">
+    <div>
+      <div class="eyebrow">The founder</div>
+      <h2>{{ site.owner }}</h2>
+      <div class="role">Owner, and the man who quotes your roof</div>
+    </div>
+    <div>
+      <p class="first">{{ site.owner }} served his time on slate roofs across west Wales before starting the firm. He quotes every job himself, works on most of them, and answers the phone.</p>
+      <p>He'll tell you if a roof can be patched rather than replaced, and he'll tell you if it can't. Either way you get a written price with the materials listed, and no pressure to sign anything on the day.</p>
+      <p style="margin-top:24px"><a class="btn btn-red" href="/contact/">Talk to {{ site.owner }}</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding-top:64px;padding-bottom:76px">
+  <div class="eyebrow">What we do</div>
+  <div class="svc-lg">
+    {% for s in site.services %}
+    <div class="row"><div class="name">{{ s.name }}</div><div class="note">{{ s.note }}</div></div>
+    {% endfor %}
+  </div>
+</div>
