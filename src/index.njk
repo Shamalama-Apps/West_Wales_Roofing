@@ -27,7 +27,7 @@ permalink: /index.html
     <a class="sec-more" href="/work/">All {{ jobs.length }} jobs &rarr;</a>
   </div>
   <div class="job-grid">
-    {% for job in jobs | first(3) %}
+    {% for job in jobs.slice(0, 3) %}
     <a class="job-card" href="{{ job.url }}">
       <div class="job-thumb">
         {% if job.data.hero %}<img src="{{ job.data.hero }}" alt="{{ job.data.title }}" loading="lazy">
