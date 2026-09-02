@@ -8,11 +8,11 @@ Status key: `[ ]` todo · `[~]` in progress · `[x]` done · `[!]` blocked on Va
 
 - [x] Create project at `~/West_Wales_Roofing`
 - [x] Coming-soon page, 404 page, CNAME, robots.txt, sitemap.xml
-- [ ] Create GitHub repo `Shamalama-Apps/West_Wales_Roofing`
-- [ ] Push `main`
-- [ ] Enable GitHub Pages (source: `main` / root)
-- [ ] Set custom domain `west-wales-roofing.com` in Pages settings
-- [ ] Enable "Enforce HTTPS" once the certificate is issued
+- [x] Create GitHub repo `Shamalama-Apps/West_Wales_Roofing` (public — Pages needs it on the free org plan)
+- [x] Push `main`
+- [x] Enable GitHub Pages (source: `main` / root) — built and serving
+- [x] Set custom domain `west-wales-roofing.com` (picked up from the `CNAME` file)
+- [ ] Enable "Enforce HTTPS" once DNS points at GitHub and the certificate is issued
 
 ## 2. DNS (Spaceship control panel — Vanessa)
 
