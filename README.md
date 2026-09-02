@@ -6,7 +6,7 @@ Website for **West Wales Roofing** — <https://west-wales-roofing.com>
 |---|---|
 | Domain | west-wales-roofing.com (registrar: Spaceship) |
 | DNS | Spaceship nameservers — `launch1.spaceship.net`, `launch2.spaceship.net` |
-| Email | Spacemail, one mailbox — `info@west-wales-roofing.com` |
+| Email | Spacemail, one mailbox — `will@west-wales-roofing.com` |
 | Hosting | GitHub Pages, served from `main` branch root |
 | Repo | `Shamalama-Apps/West_Wales_Roofing` |
 
