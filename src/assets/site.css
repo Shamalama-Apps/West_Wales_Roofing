@@ -144,6 +144,7 @@ p{text-wrap:pretty}
 .about-top p.body{font:400 17px/1.65 var(--body);color:var(--muted);margin:16px 0 0}
 .stats{display:flex;gap:40px;margin-top:30px;padding-top:24px;border-top:2px solid var(--ink);flex-wrap:wrap}
 .stats .n{font:800 34px var(--disp)}
+.stats .n.txt{font-size:26px;letter-spacing:-.01em}
 .stats .l{font:600 11px var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-top:4px}
 .portrait{height:460px;background:var(--hatch);border:1px solid var(--line);display:flex;align-items:flex-end;padding:14px;position:relative;overflow:hidden}
 .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -397,4 +398,28 @@ p{text-wrap:pretty}
   .cta-in{padding-bottom:48px;gap:24px}
   .cta-actions{width:100%;gap:14px}
   .foot-in{padding-top:56px;gap:36px}
+}
+
+/* three across on one row: as a flex row with a 40px gap these wrapped onto two
+   lines on a phone */
+@media (max-width:700px){
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+  .stats .n{font-size:30px}
+  .stats .n.txt{font-size:19px}
+  .stats .l{font-size:10px;letter-spacing:.08em;line-height:1.25}
+}
+@media (max-width:380px){
+  .stats .n{font-size:26px}
+  .stats .n.txt{font-size:16px}
+  .stats .l{font-size:9.5px;letter-spacing:.05em}
+}
+
+/* The contact details come first in the DOM so that on a phone, where the
+   columns stack, nobody scrolls past seven form fields to find the number, and
+   the tab order matches what is on screen. CSS order only moves things visually,
+   so reordering here rather than there keeps keyboard users in step. Desktop
+   puts the form back on the left, where the wider column is. */
+@media (min-width:901px){
+  .contact-main{order:1}
+  .contact-side{order:2}
 }

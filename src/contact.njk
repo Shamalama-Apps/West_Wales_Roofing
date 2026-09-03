@@ -7,11 +7,32 @@ permalink: /contact/index.html
 ---
 <div class="wrap contact-top">
   <div class="eyebrow eyebrow-red">Contact</div>
-  <h1>Tell us what the roof is doing.</h1>
+  <h1>Let us know what needs doing</h1>
   <p class="lede">Ring, text or fill the form. {{ site.owner }} answers the same day, and coming to look costs nothing.</p>
 
   <div class="contact-grid">
-    <div>
+    <div class="contact-side">
+      <h2 class="vh">Other ways to reach us</h2>
+      <a class="ccard primary" href="tel:{{ site.phoneLink }}">
+        <div class="k">Call</div>
+        <div class="v">{{ site.phoneDisplay }}</div>
+      </a>
+      <a class="ccard" href="sms:{{ site.phoneLink }}">
+        <div class="k">Text</div>
+        <div class="v sm">{{ site.phoneDisplay }}</div>
+        <div class="sub">Photos of the roof help.</div>
+      </a>
+      <a class="ccard" href="mailto:{{ site.email }}">
+        <div class="k">Email</div>
+        <div class="v xs">{{ site.email }}</div>
+      </a>
+      <div class="areabox">
+        <div class="t">Where we work</div>
+        <p>{{ site.areasLong }}. Further out for larger jobs, just ask.</p>
+      </div>
+    </div>
+
+    <div class="contact-main">
       <h2 class="vh">Send an enquiry</h2>
       <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/">
         <input type="hidden" name="form-name" value="enquiry">
@@ -65,27 +86,6 @@ permalink: /contact/index.html
           <span class="form-note">No newsletters, no passing your details on. See our <a href="/privacy/">privacy policy</a>.</span>
         </div>
       </form>
-    </div>
-
-    <div class="contact-side">
-      <h2 class="vh">Other ways to reach us</h2>
-      <a class="ccard primary" href="tel:{{ site.phoneLink }}">
-        <div class="k">Call</div>
-        <div class="v">{{ site.phoneDisplay }}</div>
-      </a>
-      <a class="ccard" href="sms:{{ site.phoneLink }}">
-        <div class="k">Text</div>
-        <div class="v sm">{{ site.phoneDisplay }}</div>
-        <div class="sub">Photos of the roof help.</div>
-      </a>
-      <a class="ccard" href="mailto:{{ site.email }}">
-        <div class="k">Email</div>
-        <div class="v xs">{{ site.email }}</div>
-      </a>
-      <div class="areabox">
-        <div class="t">Where we work</div>
-        <p>{{ site.areasLong }}. Further out for larger jobs, just ask.</p>
-      </div>
     </div>
   </div>
 </div>
