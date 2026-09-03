@@ -424,3 +424,16 @@ p{text-wrap:pretty}
   .contact-main{order:1}
   .contact-side{order:2}
 }
+
+/* On a phone the number stays readable on its own row, because this is the page
+   someone opens in order to make contact, and below 380px the header pill has
+   already shrunk to an icon. The other three become icons only, so their
+   aria-labels are all a screen reader has to go on. */
+@media (max-width:900px){
+  .contact-side{flex-direction:row;flex-wrap:wrap;gap:9px}
+  .ccard.primary{flex:0 0 100%;justify-content:flex-start;padding:13px 15px;gap:12px}
+  .ccard:not(.primary){flex:1;justify-content:center;padding:15px 0;gap:0}
+  .ccard:not(.primary) .ccard-body{display:none}
+  .ccard-icon,.ccard-icon svg{width:25px;height:25px}
+  .ccard.primary .v{font-size:20px}
+}
