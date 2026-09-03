@@ -51,5 +51,8 @@
     "Friday",
     "Saturday"
   ],
-  "openingLabel": "7am to 7pm, Monday to Saturday"
+  "openingLabel": "7am to 7pm, Monday to Saturday",
+  "ownerFullName": "William Jenkins",
+  "addressStreet": "37 The Moorings",
+  "postcode": ""
 }

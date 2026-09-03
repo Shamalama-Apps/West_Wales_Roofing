@@ -16,8 +16,10 @@
       "priceRange": "££",
       "address": {
         "@type": "PostalAddress",
+        {% if site.addressStreet %}"streetAddress": {{ site.addressStreet | dump | safe }},{% endif %}
         {% if site.town %}"addressLocality": {{ site.town | dump | safe }},{% endif %}
         {% if site.county %}"addressRegion": {{ site.county | dump | safe }},{% endif %}
+        {% if site.postcode %}"postalCode": {{ site.postcode | dump | safe }},{% endif %}
         "addressCountry": "GB"
       },
       {%- if site.openingDays and site.openingFrom %}

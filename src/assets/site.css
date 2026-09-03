@@ -514,3 +514,4 @@ p{text-wrap:pretty}
 .form-urgent a{font-weight:600}
 .btn:disabled{opacity:.65;cursor:default}
 .foot-hours{font:400 15px/1.5 var(--body);color:var(--muted-2);margin-top:10px}
+.foot-legal{max-width:52ch}

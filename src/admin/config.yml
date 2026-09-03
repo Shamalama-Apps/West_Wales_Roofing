@@ -181,6 +181,9 @@ collections:
           - { name: phoneLink, label: Phone number for tap-to-call, widget: string, hint: No spaces, e.g. 07956091794 }
           - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794, used by Google' }
           - { name: email, label: Email address, widget: string }
+          - { name: ownerFullName, label: "Owner's full legal name", widget: string, required: false, hint: 'Legally required in the footer, because West Wales Roofing is a business name rather than a surname' }
+          - { name: addressStreet, label: House number and street, widget: string, required: false, hint: 'The address where legal documents can be served' }
+          - { name: postcode, label: Postcode, widget: string, required: false }
           - { name: town, label: Town you are based in, widget: string, required: false, hint: 'Shown in the footer, and told to Google for near-me searches' }
           - { name: county, label: County, widget: string, required: false }
           - { name: openingLabel, label: "Hours, as people should read them", widget: string, required: false, hint: 'e.g. "7am to 7pm, Monday to Saturday"' }

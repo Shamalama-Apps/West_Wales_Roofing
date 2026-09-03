@@ -80,14 +80,28 @@ a template from Trading Standards or an accountant rather than writing one.
 
 ---
 
-## What I need in order to update the site
+## Status, 3 September 2026
 
-1. Sole trader or limited company?
-2. If a company: registered name, number, and registered office address.
-3. If a sole trader: Will's full name, and an address for service.
-4. Public liability cover amount and insurer.
-5. Any trade body memberships he actually holds.
-6. Guarantee length on new roofs, if he offers one.
+✅ **Sole trader.** West Wales Roofing is a trading name of **William Jenkins**,
+37 The Moorings, St Dogmaels, Pembrokeshire. The disclosure now appears in the
+footer of every page and in the privacy policy, and the address is in the
+structured data.
 
-Items 1 to 3 are needed before launch. The rest can follow, but 4 is the one that
-wins work.
+⚠️ **Postcode still missing.** The address is incomplete without it. Field is in
+the CMS under Site details.
+
+⚠️ **That is a home address, and it is now published on every page.** It is
+legally required for a sole trader using a business name, but it does not have to
+be the home. An accountant's address, or a paid service address, is accepted for
+this purpose and many sole traders use one. Worth putting to Will before launch,
+because once it is indexed it is hard to take back.
+
+Still needed, in order of what they earn:
+
+1. **Public liability cover amount and insurer.** The single thing homeowners
+   check hardest. Not legally required, but it wins work.
+2. **The 14 day cancellation notice** to give with every quote. Not a website
+   item, but the highest-risk gap in the business.
+3. **Waste carrier registration** with Natural Resources Wales.
+4. Any trade body memberships he actually holds.
+5. Guarantee length on new roofs, if he offers one.

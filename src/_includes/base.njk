@@ -100,7 +100,9 @@
   <div class="foot-bar">
     <div class="wrap">
       <span>&copy; {{ build.year }} {{ site.name }}</span>
-      <span>Photographs of every finished job</span>
+      {%- if site.ownerFullName %}
+      <span class="foot-legal">{{ site.name }} is a trading name of {{ site.ownerFullName }}.{% if site.addressStreet %} {{ site.addressStreet }}, {{ site.town }}, {{ site.county }}{% if site.postcode %} {{ site.postcode }}{% endif %}.{% endif %}</span>
+      {%- endif %}
     </div>
   </div>
 </footer>
