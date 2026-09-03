@@ -9,3 +9,7 @@ bun.lock
 bun.lockb
 .cache/
 img/
+
+# 130MB of originals straight off a phone. They belong on disk and in the CMS
+# media library, never in git history, where every version is kept forever.
+work-photos/
