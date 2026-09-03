@@ -215,7 +215,9 @@ p{text-wrap:pretty}
   .textwill-body{min-width:320px}
 }
 @media (max-width:900px){
-  .wrap{padding:0 22px}
+  /* longhand deliberately: the shorthand resets top and bottom padding to
+     zero, and 19 components on this site are class="wrap something" */
+  .wrap{padding-left:22px;padding-right:22px}
   .site-nav{gap:16px}
   .site-nav a.navlink{font-size:12px}
   .hero-card h1{font-size:36px}
@@ -302,7 +304,8 @@ p{text-wrap:pretty}
    no longer limited by the 175px logo file */
 .head-logo,.foot-logo{display:inline-flex;align-items:center;gap:11px;color:var(--ink)}
 .head-logo:hover .wordmark,.foot-logo:hover .wordmark{color:var(--red-d)}
-.head-logo img{height:44px;width:auto}
+.head-logo img{height:44px;width:auto;display:block}
+.logo-b{display:none}
 .foot-logo img{height:36px;width:auto}
 .wordmark{
   font-family:var(--disp);font-weight:800;font-size:23px;line-height:1;
@@ -315,7 +318,11 @@ p{text-wrap:pretty}
 }
 /* one line is wider than the stacked version was, so the name gives way to the
    nav sooner than it used to */
-@media (max-width:430px){ .head-logo .wordmark{display:none} }
+@media (max-width:480px){
+  .head-logo .logo-a,.head-logo .wordmark{display:none}
+  .head-logo .logo-b{display:block}
+  .head-logo img{height:36px}
+}
 
 /* compact header: hamburger and a phone icon, shown below 780px */
 .nav-compact{display:none;align-items:center;gap:10px}
@@ -323,13 +330,21 @@ p{text-wrap:pretty}
   width:44px;height:44px;display:flex;align-items:center;justify-content:center;
   border:1.5px solid var(--ink);background:#fff;cursor:pointer;
 }
-/* no box: the 44px tap target is kept, it just is not drawn */
-.tel-icon{
-  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-  color:var(--red);border:none;background:none;
+/* the number as readable text, not just a glyph: someone dialling from a
+   landline or writing it down needs the digits */
+.tel-pill{
+  height:44px;display:inline-flex;align-items:center;gap:7px;
+  padding:0 6px;background:none;color:var(--red);
+  font:700 16px var(--disp);letter-spacing:.01em;white-space:nowrap;
 }
-.tel-icon svg{width:24px;height:24px}
-.tel-icon:hover{color:var(--red-d)}
+.tel-pill:hover{color:var(--red-d)}
+.tel-pill svg{width:19px;height:19px;flex:none}
+/* below this the digits will not fit beside the menu button */
+@media (max-width:380px){
+  .tel-pill{width:44px;padding:0;justify-content:center}
+  .tel-pill .tel-digits{display:none}
+  .tel-pill svg{width:22px;height:22px}
+}
 .menu summary{list-style:none}
 .menu summary::-webkit-details-marker{display:none}
 .menu summary::marker{content:""}
@@ -370,3 +385,16 @@ p{text-wrap:pretty}
 .gallery-head{font:600 11px var(--disp);letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
 .job-card-title{letter-spacing:0}
 .next-job h2.t{font:700 26px/1.15 var(--disp)}
+
+/* mobile spacing: the red call-to-action band and the footer ran into each
+   other once the buttons went full-width and everything stacked */
+@media (max-width:900px){
+  .cta-in{padding-top:44px;padding-bottom:44px}
+  .foot-in{padding-top:52px;padding-bottom:40px}
+  .foot-bar .wrap{padding-top:18px;padding-bottom:22px}
+}
+@media (max-width:560px){
+  .cta-in{padding-bottom:48px;gap:24px}
+  .cta-actions{width:100%;gap:14px}
+  .foot-in{padding-top:56px;gap:36px}
+}

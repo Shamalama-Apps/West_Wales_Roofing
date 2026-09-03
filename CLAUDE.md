@@ -61,6 +61,14 @@ needs to opt in — CMS uploads are handled automatically.
 - The build warns about originals over 1MB in `src/uploads`. Those stay in git
   permanently — the optimisation is for visitors, not the repo.
 
+## Never use the `padding` shorthand on `.wrap`
+
+`.wrap` is a layout class used alongside a component class on 19 elements
+(`class="wrap cta-in"` and so on). Writing `padding: 0 22px` in a media query
+resets top and bottom padding to zero on every one of them, which silently
+flattened the whole site's vertical rhythm on mobile until it was spotted in the
+footer. Always use `padding-left` / `padding-right` longhand there.
+
 ## Style
 
 - 2-space indent, no semicolons unless required
