@@ -1,8 +1,12 @@
+---
+permalink: /admin/config.yml
+eleventyExcludeFromCollections: true
+---
 backend:
   name: github
   repo: Shamalama-Apps/West_Wales_Roofing
   branch: main
-  base_url: https://west-wales-roofing.com
+  base_url: {{ build.cmsBaseUrl }}
   auth_endpoint: api/auth
 
 media_folder: src/uploads
