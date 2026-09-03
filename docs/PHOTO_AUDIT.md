@@ -1,7 +1,30 @@
 # Photo audit, 3 September 2026
 
-34 photos in `work-photos/`. I have looked at every one. Grouped below by the date
-they were taken, since a cluster of photos on one day is almost certainly one job.
+34 photos in `work-photos/`. I have looked at every one.
+
+**They are now sorted into folders on disk**, one per likely job, split into
+`roofing/` and `carpentry/`. Each folder has a `README.txt` with a blank for the
+job and the town. Fill those in, in the folders or here, whichever is easier.
+
+```
+work-photos/
+  roofing/
+    2025-05_terrace-reroof          2   before and after, the current hero photo
+    2026-06-29_slate-reroof         3   membrane, battens, slates stacked
+    2026-07-07_flat-roof            2   OSB deck, new guttering
+    2026-08-07_slate-and-chimney    2   part stripped, battened
+    2026-08-25_battens              2   possibly the same job as above
+    2026-09-01_chimney-rebuild      6   the strongest sequence in the folder
+    2026-09-03_facetime-survey      3   FaceTime grabs, a roof being looked at
+    _unsorted                       1   scaffold shot, job unknown
+  carpentry/
+    2025-02-24_interior-framing     2
+    2026-05-08_fitted-joinery       3   green room, fitted counter
+    2026-07-15_timber-framing       3
+    2026-07-17_stud-walls-staircase 5
+```
+
+Roofing 21, carpentry 13.
 
 **Fill in the blanks and I will label, resize and load them into the CMS.**
 For each roofing group I need: what the job was, which town, and roughly when.
