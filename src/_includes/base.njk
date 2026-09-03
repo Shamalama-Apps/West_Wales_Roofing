@@ -83,6 +83,8 @@
         <a href="sms:{{ site.phoneLink }}">Text the same number</a>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       </div>
+      {%- if site.openingLabel %}<div class="foot-hours">{{ site.openingLabel }}</div>{% endif %}
+      {%- if site.town %}<div class="foot-hours">Based in {{ site.town }}, {{ site.county }}</div>{% endif %}
     </div>
     <div>
       <div class="foot-k">Pages</div>

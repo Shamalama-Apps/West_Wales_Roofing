@@ -14,7 +14,20 @@
       "email": {{ site.email | dump | safe }},
       "telephone": {{ site.phoneIntl | dump | safe }},
       "priceRange": "££",
-      "address": { "@type": "PostalAddress", "addressRegion": "Wales", "addressCountry": "GB" },
+      "address": {
+        "@type": "PostalAddress",
+        {% if site.town %}"addressLocality": {{ site.town | dump | safe }},{% endif %}
+        {% if site.county %}"addressRegion": {{ site.county | dump | safe }},{% endif %}
+        "addressCountry": "GB"
+      },
+      {%- if site.openingDays and site.openingFrom %}
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [{% for d in site.openingDays %}{{ d | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+        "opens": {{ site.openingFrom | dump | safe }},
+        "closes": {{ site.openingTo | dump | safe }}
+      }],
+      {%- endif %}
       "areaServed": [
         {%- for a in site.areasList %}
         { "@type": "AdministrativeArea", "name": {{ a | dump | safe }} }{% if not loop.last %},{% endif %}

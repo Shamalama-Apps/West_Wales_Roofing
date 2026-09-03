@@ -181,6 +181,17 @@ collections:
           - { name: phoneLink, label: Phone number for tap-to-call, widget: string, hint: No spaces, e.g. 07956091794 }
           - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794, used by Google' }
           - { name: email, label: Email address, widget: string }
+          - { name: town, label: Town you are based in, widget: string, required: false, hint: 'Shown in the footer, and told to Google for near-me searches' }
+          - { name: county, label: County, widget: string, required: false }
+          - { name: openingLabel, label: "Hours, as people should read them", widget: string, required: false, hint: 'e.g. "7am to 7pm, Monday to Saturday"' }
+          - { name: openingFrom, label: Opening time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 07:00' }
+          - { name: openingTo, label: Closing time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 19:00' }
+          - name: openingDays
+            label: Days you work
+            widget: list
+            required: false
+            field: { name: day, label: Day, widget: string }
+            hint: 'One per line, spelled in full, e.g. Monday. Used by Google only'
           - { name: whatsapp, label: WhatsApp number, widget: string, required: false, hint: 'International form, no plus and no leading zero: 447956091794. Leave this empty to hide the WhatsApp button.' }
           - name: areasList
             label: Counties you cover

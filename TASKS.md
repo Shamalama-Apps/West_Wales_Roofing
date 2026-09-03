@@ -113,9 +113,9 @@ party beyond hosting and email.
 - **"What happens when you ring."** Nothing tells a nervous person what follows
   contact: when Will replies, whether looking costs anything, how long a written
   quote takes, whether a deposit is wanted.
-- **A town and opening hours** for the `PostalAddress` in the structured data.
-  Currently it says only "Wales", which weakens the local pack for
-  "roofer near me".
+- ✅ **Town and opening hours** added 2026-09-03: St Dogmaels, Pembrokeshire,
+  7am to 7pm. ⚠️ **Days assumed Monday to Saturday** — confirm with Will, it is
+  editable in the CMS under Site details.
 
 ## Phase 4 — get found
 
@@ -166,5 +166,6 @@ branding and independence. The local tool is right if Will wants nothing tied to
 an account; Zoho is right if losing the data would be a disaster. Worth putting
 both to him in one sentence each.
 
-**18a.** 🧍 **Decide: local HTML tool, or Zoho Invoice free tier.** Ask Will which
-matters more, owning it outright or never losing it.
+**18a.** ⏸️ **Benched 2026-09-03.** Revisit once the website is live and Will has
+actually been invoicing for a while; what he finds annoying by then will say more
+than guessing now.
