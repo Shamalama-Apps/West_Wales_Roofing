@@ -16,8 +16,13 @@ const page = (status, payloadObj, human) => {
 <script>
 (function () {
   var out = document.getElementById('diag')
-  var log = []
-  function say (line) { log.push(line); out.textContent = log.join('\n') }
+  // Each line is its own element: a backslash escape here would be consumed by
+  // the template literal that emits this script and break the whole file.
+  function say (line) {
+    var row = document.createElement('div')
+    row.textContent = line
+    out.appendChild(row)
+  }
 
   var message = 'authorization:github:${status}:${payload}'
 
