@@ -62,6 +62,14 @@ Spaceship DNS panel:
 Leave the Spacemail `MX` and `SPF` records alone — they are unrelated to hosting
 and email will break if they are removed.
 
+**Also update these when the domain changes**, or things break quietly:
+
+- **DecapBridge → site settings → Decap CMS login URL**: change from
+  `https://west-wales-roofing.netlify.app/admin/` to
+  `https://west-wales-roofing.com/admin/`, or invite emails will send Will to the
+  old address.
+- The CMS `base_url` needs no change — it follows Netlify's `URL` automatically.
+
 Then, in this repo:
 
 ```sh
