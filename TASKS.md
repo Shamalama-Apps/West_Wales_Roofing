@@ -21,7 +21,9 @@ Old GitHub OAuth handler and its credentials removed.
 
 **3a.** 🧍 **Record the GitHub PAT expiry date.** DecapBridge holds a fine-grained
 token for this repo. If it expires the CMS stops saving with no warning. Note the
-date here, and set a calendar reminder a week before:  `expiry: ______`
+date here, and set a calendar reminder a week before: **expiry 2027-09-03**
+(365 days, the GitHub maximum, set 2026-09-03). The CMS will stop saving that day
+with no error unless the token is regenerated in GitHub and updated in DecapBridge.
 
 **4.** 🧍🤖 **Spaceship API key, scoped to `dnsrecords:read` + `dnsrecords:write`.**
 Vanessa creates it in API Manager; Claude stores it in Keychain and uses it for
@@ -30,9 +32,9 @@ Optional — skip it and tasks 11–13 become manual instead.
 
 ## Phase 2 — make the content true (before the domain points at it)
 
-**5.** 🧍 **Confirm the service areas.**
-The design copy says Carmarthenshire, Ceredigion and north Pembrokeshire. You said
-those three plus Swansea and Cardiff. Cheap to fix now, drives all the local SEO.
+**5.** ✅ **Service areas confirmed** — 2026-09-03. **Carmarthenshire and
+Ceredigion only.** Cardiff, Swansea and Pembrokeshire all removed from copy,
+metadata and schema.
 
 **6.** 🧍 **Real photographs of real jobs.**
 The single biggest item. The whole site is built on the promise "every roof we

@@ -24,6 +24,13 @@ areas and the services list all live in `src/_data/site.json` — which Decap al
 edits, so keep its shape stable. Adding a field there means adding it to
 `src/admin/config.yml` too, or the CMS will silently drop it on the next save.
 
+## Service areas appear in five places
+
+`src/_data/site.json` drives the body copy, the footer and the schema.org
+`areaServed`. The four page `description` values in `index/work/about/contact.njk`
+spell the areas out separately for search results and must be changed by hand to
+match. Changing one and not the others is the easy mistake.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

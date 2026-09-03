@@ -7,14 +7,11 @@
   "phoneIntl": "+447956091794",
   "email": "will@west-wales-roofing.com",
   "owner": "Will",
-  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion",
-  "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion, plus Swansea and Cardiff",
+  "areasShort": "Carmarthenshire and Ceredigion",
+  "areasLong": "Carmarthenshire and Ceredigion",
   "areasList": [
     "Carmarthenshire",
-    "Pembrokeshire",
-    "Ceredigion",
-    "Swansea",
-    "Cardiff"
+    "Ceredigion"
   ],
   "services": [
     {
