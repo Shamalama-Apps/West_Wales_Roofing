@@ -41,7 +41,7 @@ permalink: /index.html
         {% else %}<span>{{ job.data.photoLabel }}</span>{% endif %}
       </div>
       <div class="job-cat">{{ job.data.category }}</div>
-      <div class="job-card-title">{{ job.data.title }}</div>
+      <h3 class="job-card-title">{{ job.data.title }}</h3>
       <p>{{ job.data.overview }}</p>
       <div class="job-meta">{{ [job.data.system, job.data.duration] | select | join(" &middot; ") | safe }}</div>
     </a>
@@ -52,14 +52,13 @@ permalink: /index.html
 <section class="band">
   <div class="wrap band-in">
     <div>
-      <div class="eyebrow">Who we are</div>
-      <h2>A small firm, still run off the tools.</h2>
+      <h2>Who we are</h2>
       <p>{{ site.name }} is {{ site.owner }} and a small crew working across {{ site.areasLong }}. Slate, tile, flat roofs and storm work, on houses, farm buildings, chapels and commercial units.</p>
       <p>{{ site.owner }} quotes every job himself and is on site for most of it. No subcontracted crews, no sales calls.</p>
       <p style="margin-top:22px"><a class="sec-more" href="/about/">Read {{ site.owner }}'s story &rarr;</a></p>
     </div>
     <div>
-      <div class="eyebrow">What we do</div>
+      <h2>What we do</h2>
       <div class="svc">
         {% for s in site.services %}
         <div class="row"><div class="name">{{ s.name }}</div><div class="note">{{ s.note }}</div></div>
