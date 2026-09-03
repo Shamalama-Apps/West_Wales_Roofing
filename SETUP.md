@@ -15,37 +15,28 @@ Right now the site was deployed from a laptop. Until GitHub is connected,
 3. Pick `Shamalama-Apps/West_Wales_Roofing`, branch `main`
 4. Build command `npm run build`, publish directory `dist` (should prefill from `netlify.toml`)
 
-## 2. Create the GitHub OAuth app (required for the CMS login)
+## 2. ✅ CMS login — done
 
-Decap signs in through GitHub. Git Gateway, the old Netlify way, is deprecated,
-so this site brings its own OAuth handler at `/api/auth`.
+Content editors sign in through **DecapBridge** (site
+`be7291bb-7d2f-41a4-89db-76b05a4f4d35`), not GitHub. Editors need no GitHub
+account; they get an email invite and set their own password.
 
-1. <https://github.com/settings/developers> → **New OAuth App**
-   - Application name: `West Wales Roofing CMS`
-   - Homepage URL: `https://west-wales-roofing.com`
-   - Authorization callback URL: `https://west-wales-roofing.com/api/callback`
-2. Generate a client secret, then from this folder:
+Confirmed working 2026-09-03 in Safari and Chrome, with Will publishing a change
+end to end.
 
-   ```sh
-   netlify env:set GITHUB_CLIENT_ID <the client id>
-   netlify env:set GITHUB_CLIENT_SECRET <the client secret>
-   netlify deploy --build --prod
-   ```
+- **Add an editor:** DecapBridge dashboard → the site → *Manage collaborators* →
+  invite by email. They set their own password and can reset it unaided.
+- **Commits are attributed by name in the commit message**, while the git author
+  stays the token owner — deliberate, because the repo is public and it would
+  otherwise publish the editor's login permanently.
+- **The GitHub token** DecapBridge holds is a fine-grained PAT limited to this
+  repo. ⚠️ If it expires the CMS breaks silently — see the renewal note in
+  TASKS.md.
 
-3. Add Will as a collaborator on `Shamalama-Apps/West_Wales_Roofing` with
-   **Write** access. He needs a free GitHub account to log into `/admin`.
-
-   ⚠️ **The CMS login works in Chrome and fails in Safari.** Confirmed
-   2026-09-03 on this site. The OAuth handshake completes and the token reaches
-   Decap, which then fails silently — Decap parses the token *before* closing the
-   popup, so when it throws you get a stuck popup, no error message anywhere, and
-   the login page unchanged. Root cause not identified. If Will is a Safari user
-   this will bite him with no clue what's wrong, so either tell him to use Chrome
-   or move to DecapBridge, which replaces this handshake entirely.
-
-   *If a GitHub account for Will is a dealbreaker, the alternative is
-   DecapBridge, which gives him an email/password login instead — it swaps the
-   `backend` block in `src/admin/config.yml` and drops the two functions.*
+We previously ran our own GitHub OAuth handler here. It failed silently in Safari
+and was removed once DecapBridge was proven. To go back: `git revert` the commit
+"Switch CMS auth to DecapBridge", restore the two functions from history, and
+re-create a GitHub OAuth app.
 
 ## 3. Point DNS at Netlify (do this when the site is signed off)
 

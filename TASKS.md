@@ -15,9 +15,13 @@ pushing a commit and watching Netlify build it unaided.
 **2.** ✅ **GitHub OAuth app + env vars.** — done 2026-09-03, login confirmed
 working. ⚠️ **Chrome only — the CMS login fails silently in Safari.** See SETUP.md §2.
 
-**3.** 🧍 **Add Will to the repo with Write access.**
-He needs a free GitHub account. If that's a dealbreaker, say so and I'll swap to
-DecapBridge (email/password) instead.
+**3.** ✅ **CMS access for Will.** — done 2026-09-03. Moved to DecapBridge:
+no GitHub account needed, works in Safari, Will published a change end to end.
+Old GitHub OAuth handler and its credentials removed.
+
+**3a.** 🧍 **Record the GitHub PAT expiry date.** DecapBridge holds a fine-grained
+token for this repo. If it expires the CMS stops saving with no warning. Note the
+date here, and set a calendar reminder a week before:  `expiry: ______`
 
 **4.** 🧍🤖 **Spaceship API key, scoped to `dnsrecords:read` + `dnsrecords:write`.**
 Vanessa creates it in API Manager; Claude stores it in Keychain and uses it for
