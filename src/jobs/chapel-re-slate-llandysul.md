@@ -1,5 +1,5 @@
 ---
-title: Chapel re-slate, Llandysul
+title: Chapel re-slate, Cenarth
 category: Historic slate & tile
 location: Cenarth, Ceredigion
 system: Welsh slate, lead valleys
