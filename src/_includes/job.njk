@@ -63,7 +63,13 @@ layout: base.njk
 
 <section class="cta" style="margin-top:56px">
   <div class="wrap cta-in">
-    <h2>Want work like this on your roof?</h2>
-    <a class="btn btn-white" href="/contact/">Get a quote</a>
+    <div>
+      <h2>Want work like this on your roof?</h2>
+      <p>Looking costs nothing, and {{ site.owner }} answers the same day.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-white" href="tel:{{ site.phoneLink }}">Call {{ site.phoneDisplay }}</a>
+      <a class="btn btn-ghost" href="/contact/">Send an enquiry</a>
+    </div>
   </div>
 </section>

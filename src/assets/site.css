@@ -437,3 +437,6 @@ p{text-wrap:pretty}
   .ccard-icon,.ccard-icon svg{width:25px;height:25px}
   .ccard.primary .v{font-size:20px}
 }
+
+.about-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+@media (max-width:560px){ .about-actions .btn{width:100%;text-align:center} }
