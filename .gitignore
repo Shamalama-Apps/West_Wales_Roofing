@@ -7,3 +7,5 @@ dist/
 .env.*
 bun.lock
 bun.lockb
+.cache/
+img/

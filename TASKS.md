@@ -59,9 +59,25 @@ makes it worse, not better.
 Limited company? Company number and registered address for the footer. Public
 liability cover, trade bodies (NFRC, CompetentRoofer), guarantee length on new roofs.
 
-**9.** 🤖 **Privacy policy.** *(needs 8)*
-Legally required — the form collects names, numbers and addresses. Host as a
-directory so `/privacy` and `/privacy/` both resolve.
+**9.** ✅ **Privacy policy** — written 2026-09-03, live at `/privacy/`, linked from
+the footer and from the form itself. Describes what the site actually does: no
+cookies, no analytics, no tracking; Netlify, Spacemail and Google Fonts named.
+⚠️ If West Wales Roofing is a limited company, the company number and registered
+office must be added to the "Who we are" section (see task 8).
+
+**9a.** ✅ **CMS made usable by a non-developer** — 2026-09-03. Fields reordered and
+relabelled as plain questions, unhelpful preview pane removed, publish toggle made
+explicit, blank optional fields no longer render empty rows.
+
+**9b.** ✅ **Automatic image optimisation** — 2026-09-03. Uploads are served as
+AVIF/WebP with a responsive srcset, capped at 1600px. Measured: a 5.9MB phone photo
+becomes 269KB at worst, a 95% reduction. ⚠️ Originals still live in git — see
+task 9c if that becomes a problem.
+
+**9c.** 🧍 **Decide whether photo originals should stay in git.** Every upload is
+committed at full size forever; twenty jobs at ten 5MB photos is a 1GB repo.
+Options: accept it, ask Will to send photos for resizing first, or move the media
+library to Cloudinary so originals never enter the repo.
 
 **10.** 🧍🤖 **Higher-resolution logo, then a full favicon set.**
 The supplied PNG is 225×100 and looks soft on any modern screen. SVG ideally.

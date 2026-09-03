@@ -23,7 +23,7 @@ permalink: /work/index.html
   {% for job in jobs %}
   <div class="slide{% if loop.first %} is-active{% endif %}" data-slide role="group" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ jobs.length }}"{% if not loop.first %} hidden{% endif %}>
     <div class="slide-note">{{ job.data.photoLabel }}</div>
-    {% if job.data.hero %}<img class="slide-img" src="{{ job.data.hero }}" alt="{{ job.data.title }}">{% endif %}
+    {% if job.data.hero %}<img class="slide-img" src="{{ job.data.hero }}" alt="{{ job.data.title }}" sizes="100vw" loading="eager">{% endif %}
     <div class="wrap slide-in">
       <div class="slide-card">
         <div class="eyebrow eyebrow-red">{{ job.data.category }}</div>

@@ -46,6 +46,21 @@ pages derive a `Service` node straight from the CMS fields, so new jobs get
 correct schema with no extra work. All string values go through `| dump` so
 apostrophes in copy cannot break the JSON.
 
+## Images
+
+Every `<img>` in the built HTML is run through `@11ty/eleventy-img` and comes out
+as AVIF + WebP with a responsive srcset, capped at 1600px. Nothing in a template
+needs to opt in — CMS uploads are handled automatically.
+
+- The fallback format is `auto`, deliberately. A JPEG fallback flattens the
+  logo's transparent background onto black.
+- Never add `"auto"` to `widths`: it emits a full-size derivative (4000px+ from a
+  phone) that a large screen will happily download.
+- Set `sizes` on any new `<img>` to match its rendered width, or the browser
+  fetches the 1600px file for a 370px card.
+- The build warns about originals over 1MB in `src/uploads`. Those stay in git
+  permanently — the optimisation is for visitors, not the repo.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

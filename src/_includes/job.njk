@@ -17,11 +17,11 @@ layout: base.njk
 
 <div class="wrap ba">
   <div>
-    <div class="shot">{% if before %}<img src="{{ before }}" alt="{{ title }} before the work">{% endif %}</div>
+    <div class="shot">{% if before %}<img src="{{ before }}" alt="{{ title }} before the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager">{% endif %}</div>
     <div class="label">Before</div>
   </div>
   <div>
-    <div class="shot">{% if after %}<img src="{{ after }}" alt="{{ title }} after the work">{% endif %}</div>
+    <div class="shot">{% if after %}<img src="{{ after }}" alt="{{ title }} after the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager">{% endif %}</div>
     <div class="label after">After</div>
   </div>
 </div>
@@ -44,7 +44,7 @@ layout: base.njk
   <div class="eyebrow">On the job</div>
   <div class="gallery-grid">
     {% for shot in gallery %}
-    <div class="shot"><img src="{{ shot.image }}" alt="{{ shot.caption or title }}" loading="lazy"></div>
+    <div class="shot"><img src="{{ shot.image }}" alt="{{ shot.caption or title }}" sizes="(max-width:900px) 50vw, 280px"></div>
     {% endfor %}
   </div>
 </div>

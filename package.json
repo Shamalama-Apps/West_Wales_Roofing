@@ -3,13 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Website for West Wales Roofing \u2014 west-wales-roofing.com",
+  "description": "Website for West Wales Roofing — west-wales-roofing.com",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^7.0.0"
   }
 }

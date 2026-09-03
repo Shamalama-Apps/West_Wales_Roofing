@@ -30,7 +30,7 @@
 
 <header class="site-head">
   <div class="wrap head-in">
-    <a class="head-logo" href="/"><img src="/logo.png" alt="{{ site.name }}" width="225" height="100"></a>
+    <a class="head-logo" href="/"><img src="/logo.png" alt="{{ site.name }}" width="225" height="100" loading="eager" fetchpriority="high" sizes="200px"></a>
     <nav class="site-nav" aria-label="Main">
       <a class="navlink" href="/work/"{% if page.url == "/work/" %} aria-current="page"{% endif %}>Work</a>
       <a class="navlink" href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About</a>
@@ -47,7 +47,7 @@
 <footer class="site-foot">
   <div class="wrap foot-in">
     <div>
-      <img src="/logo.png" alt="{{ site.name }}" width="225" height="100">
+      <img src="/logo.png" alt="{{ site.name }}" width="225" height="100" sizes="120px">
       <p class="foot-blurb">Slate, tile, flat and storm work across {{ site.areasLong }}.</p>
     </div>
     <div>

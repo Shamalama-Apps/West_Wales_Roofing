@@ -31,7 +31,7 @@ permalink: /index.html
     {% for job in jobs.slice(0, 3) %}
     <a class="job-card" href="{{ job.url }}">
       <div class="job-thumb">
-        {% if job.data.hero %}<img src="{{ job.data.hero }}" alt="{{ job.data.title }}" loading="lazy">
+        {% if job.data.hero %}<img src="{{ job.data.hero }}" alt="{{ job.data.title }}" sizes="(max-width:900px) 100vw, 370px">
         {% else %}<span>{{ job.data.photoLabel }}</span>{% endif %}
       </div>
       <div class="job-cat">{{ job.data.category }}</div>
