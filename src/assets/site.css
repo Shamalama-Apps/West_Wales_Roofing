@@ -274,3 +274,19 @@ p{text-wrap:pretty}
 .prose li{font:400 17px/1.65 var(--body);color:var(--muted);margin-bottom:6px}
 .prose strong{color:var(--ink)}
 @media (max-width:900px){ .prose h1{font-size:32px} }
+
+/* hero photo: the scrim keeps the white card readable whatever photo is used */
+.hero.has-photo{background:var(--ink)}
+.hero.has-photo .hero-in{position:relative;z-index:2}
+.hero.has-photo::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,rgba(28,27,26,.55) 0%,rgba(28,27,26,.25) 55%,rgba(28,27,26,.05) 100%);
+}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero.has-photo picture{position:absolute;inset:0}
+
+/* hero subtitle: the promise, sitting between the headline and the detail */
+.hero-card .hero-sub{
+  font:600 21px/1.25 var(--disp);color:var(--red);margin:14px 0 0;max-width:none;
+}
+@media (max-width:900px){ .hero-card .hero-sub{font-size:18px} }

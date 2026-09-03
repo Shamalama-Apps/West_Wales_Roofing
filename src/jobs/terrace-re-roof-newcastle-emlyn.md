@@ -11,4 +11,4 @@ featured: false
 photoLabel: terrace, scaffold to front
 overview: A mid-terrace with a shared valley. Re-roofed in fibre cement slate with the neighbour's valley made good.
 ---
-Draft — write-up still to come.
+Draft, write-up still to come.

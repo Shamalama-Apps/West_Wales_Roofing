@@ -43,9 +43,11 @@ parsing JSON on every built page.
 
 ## Phase 2 — make the content true (before the domain points at it)
 
-**5.** ✅ **Service areas confirmed** — 2026-09-03. **Carmarthenshire and
-Ceredigion only.** Cardiff, Swansea and Pembrokeshire all removed from copy,
-metadata and schema.
+**5.** ✅ **Service areas settled** (2026-09-03, revised). **Carmarthenshire,
+Pembrokeshire and Ceredigion.** Cardiff and Swansea dropped. Pembrokeshire was
+briefly removed on Vanessa's instruction, then put back by Will through the CMS,
+and Vanessa confirmed his version. The counties are now named in the hero, the
+four page descriptions, the footer and the schema.
 
 **6.** 🧍 **Real photographs of real jobs.**
 The single biggest item. The whole site is built on the promise "every roof we

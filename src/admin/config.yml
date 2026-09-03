@@ -1,4 +1,4 @@
-# NOT a template — passthrough-copied only. Decap's {{...}} placeholders share
+# NOT a template, passthrough-copied only. Decap's {{...}} placeholders share
 # Nunjucks' syntax, so rendering this file silently empties them.
 backend:
   name: git-gateway
@@ -30,13 +30,13 @@ collections:
     description: >-
       Every roof you finish goes here. Add the photos, write a few lines about
       what the job involved, then turn on "Show this job on the website".
-      Anything left switched off stays private — it is not on the website at all,
+      Anything left switched off stays private. It is not on the website at all,
       not even at a hidden address.
     folder: src/jobs
     create: true
     slug: "{{slug}}"
     identifier_field: title
-    summary: "{{title}} — {{location}}"
+    summary: "{{title}} ({{location}})"
     sortable_fields: [date, title, category]
     view_filters:
       - { label: On the website, field: live, pattern: true }
@@ -53,7 +53,7 @@ collections:
         default: false
         hint: >-
           Leave this off while you are still working on it. You can save as often
-          as you like — nothing appears on the website until this is switched on.
+          as you like. Nothing appears on the website until this is switched on.
 
       - name: featured
         label: Show on the home page
@@ -179,14 +179,14 @@ collections:
           - { name: owner, label: "Your first name (used in the copy)", widget: string }
           - { name: phoneDisplay, label: "Phone number as people should read it", widget: string, hint: 'e.g. "07956 091794"' }
           - { name: phoneLink, label: Phone number for tap-to-call, widget: string, hint: No spaces, e.g. 07956091794 }
-          - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794 — used by Google' }
+          - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794, used by Google' }
           - { name: email, label: Email address, widget: string }
           - name: areasList
             label: Counties you cover
             widget: list
             field: { name: area, label: County, widget: string }
             hint: Used by Google to work out where you work. One county per line.
-          - { name: areasShort, label: "Areas, written out short", widget: string, hint: 'e.g. "Carmarthenshire and Ceredigion"' }
+          - { name: areasShort, label: "Areas, written out short", widget: string, hint: 'e.g. "Carmarthenshire, Pembrokeshire and Ceredigion"' }
           - { name: areasLong, label: "Areas, written out in full", widget: string, hint: Appears in the footer and on the About page. }
           - name: services
             label: What you do
@@ -197,5 +197,7 @@ collections:
             fields:
               - { name: name, label: Service, widget: string }
               - { name: note, label: One line describing it, widget: string }
+          - { name: heroImage, label: Main photo on the home page, widget: image, required: false, hint: A wide shot of a finished roof works best. It sits behind the text at the top of the home page. }
+          - { name: heroAlt, label: Describe that photo, widget: string, required: false, hint: One line, for people using a screen reader and for Google. }
           - { name: tagline, label: Tagline, widget: string }
           - { name: url, label: Website address, widget: string, hint: Do not change this unless the domain changes. }

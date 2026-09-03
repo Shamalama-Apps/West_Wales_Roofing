@@ -3,17 +3,23 @@ layout: base.njk
 pageType: home
 title: Roofing in West Wales
 titleFull: "West Wales Roofing | Slate, Tile & Flat Roofs"
-description: Roofers covering Carmarthenshire and Ceredigion. Re-roofs, new builds, flat roofs, historic slate and storm damage. Free quotes — call 07956 091794.
+description: Roofing specialists covering Carmarthenshire, Pembrokeshire and Ceredigion. Re-roofs, new builds, flat roofs, historic slate and storm damage. Free quotes, call 07956 091794.
 permalink: /index.html
 ---
 {% set jobs = collections.jobs | featuredFirst %}
 
-<section class="hero">
+<section class="hero{% if site.heroImage %} has-photo{% endif %}">
+  {%- if site.heroImage %}
+  <img class="hero-img" src="{{ site.heroImage }}" alt="{{ site.heroAlt }}" sizes="100vw" loading="eager" fetchpriority="high">
+  {%- else %}
+  <div class="hero-note">hero photo: latest completed roof</div>
+  {%- endif %}
   <div class="wrap hero-in">
     <div class="hero-card">
-      <div class="eyebrow eyebrow-red">Slate &middot; Tile &middot; Flat &middot; West Wales</div>
-      <h1>Every roof we finish goes on this site.</h1>
-      <p>{{ jobs.length }} jobs on the books this year, photographed start to finish. Have a look at the work, then ring us.</p>
+      <div class="eyebrow eyebrow-red">{% for a in site.areasList %}{{ a }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</div>
+      <h1>Roofing specialists in west Wales.</h1>
+      <p class="hero-sub">Respectful and on time, every time.</p>
+      <p>A new firm, keen and properly trained. Roofs are all we do. We turn up when we say we will, keep the site tidy, and leave your house the way we found it.</p>
       <div class="hero-actions">
         <a class="btn btn-red" href="/work/">Browse the work</a>
         <a class="btn btn-line" href="/contact/">Get a quote</a>
@@ -48,7 +54,7 @@ permalink: /index.html
     <div>
       <div class="eyebrow">Who we are</div>
       <h2>A small firm, still run off the tools.</h2>
-      <p>{{ site.name }} is {{ site.owner }} and a small crew working across {{ site.areasLong }}. Slate, tile, flat roofs and storm work &mdash; on houses, farm buildings, chapels and commercial units.</p>
+      <p>{{ site.name }} is {{ site.owner }} and a small crew working across {{ site.areasLong }}. Slate, tile, flat roofs and storm work, on houses, farm buildings, chapels and commercial units.</p>
       <p>{{ site.owner }} quotes every job himself and is on site for most of it. No subcontracted crews, no sales calls.</p>
       <p style="margin-top:22px"><a class="sec-more" href="/about/">Read {{ site.owner }}'s story &rarr;</a></p>
     </div>

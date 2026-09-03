@@ -2,8 +2,8 @@
   "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion",
   "areasList": [
     "Carmarthenshire",
-    "Ceredigion",
-    "Pembrokeshire"
+    "Pembrokeshire",
+    "Ceredigion"
   ],
   "phoneLink": "07956091794",
   "phoneIntl": "+447956091794",
@@ -12,7 +12,7 @@
   "url": "https://west-wales-roofing.com",
   "owner": "Will",
   "phoneDisplay": "07956 091794",
-  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion ",
+  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion",
   "email": "will@west-wales-roofing.com",
   "services": [
     {
@@ -35,5 +35,7 @@
       "name": "Storm & insurance repair",
       "note": "Made safe same day, photographs for the insurer"
     }
-  ]
+  ],
+  "heroImage": "/uploads/hero.jpg",
+  "heroAlt": "A finished tiled roof in the sun, ridge line and new guttering"
 }
