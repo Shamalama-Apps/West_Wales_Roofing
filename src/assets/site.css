@@ -515,3 +515,20 @@ p{text-wrap:pretty}
 .btn:disabled{opacity:.65;cursor:default}
 .foot-hours{font:400 15px/1.5 var(--body);color:var(--muted-2);margin-top:10px}
 .foot-legal{max-width:52ch}
+
+/* enquiry confirmation */
+.thanks{padding-top:64px;padding-bottom:96px}
+.thanks-tick{
+  width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.thanks-tick svg{width:24px;height:24px}
+.thanks .notice h1{font:700 30px/1.15 var(--disp)}
+.thanks-lead{font:600 20px/1.4 var(--disp);color:var(--ink);margin-top:12px}
+.thanks-urgent{
+  margin-top:26px;padding:16px 18px;background:var(--bg-2);
+  border-left:4px solid var(--red);
+}
+.thanks-urgent strong{font:700 16px var(--disp);color:var(--ink)}
+.thanks-urgent p{margin-top:4px;font-size:16px}
+.thanks-urgent a{font-weight:700;white-space:nowrap}

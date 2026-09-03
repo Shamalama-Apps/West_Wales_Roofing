@@ -1,15 +1,25 @@
 ---
 layout: base.njk
 title: Thanks, enquiry received
-description: Your enquiry has reached West Wales Roofing.
+description: Your enquiry has reached West Wales Roofing. Will will be in touch within one business day.
 permalink: /thanks/index.html
 eleventyExcludeFromCollections: true
 noindex: true
 ---
-<div class="wrap" style="padding-top:72px;padding-bottom:96px">
+<div class="wrap thanks">
   <div class="notice">
+    <div class="thanks-tick" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
     <h1>Thanks, that's with us.</h1>
-    <p>{{ site.owner }} has your enquiry and will come back to you today. If the roof is leaking right now, ring <a href="tel:{{ site.phoneLink }}">{{ site.phoneDisplay }}</a> rather than waiting.</p>
-    <p style="margin-top:22px"><a class="btn btn-line" href="/">Back to the site</a></p>
+    <p class="thanks-lead">{{ site.owner }} will be in touch within one business day.</p>
+    <p>He reads every enquiry himself. When he calls he will ask a couple of questions about the roof, arrange a time to come and look, and put a price in writing afterwards. Looking costs nothing and there is no obligation.</p>
+
+    <div class="thanks-urgent">
+      <strong>Is the roof leaking now?</strong>
+      <p>Don't wait for a reply. Ring {{ site.owner }} on <a href="tel:{{ site.phoneLink }}">{{ site.phoneDisplay }}</a>.</p>
+    </div>
+
+    <p style="margin-top:26px"><a class="btn btn-line" href="/">Back to the site</a></p>
   </div>
 </div>
