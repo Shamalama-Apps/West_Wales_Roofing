@@ -32,10 +32,10 @@ layout: base.njk
     <div class="writeup">{{ content | safe }}</div>
   </div>
   <dl class="spec">
-    <div class="row"><dt>Roof system</dt><dd>{{ system }}</dd></div>
-    <div class="row"><dt>Job size</dt><dd>{{ size }}</dd></div>
-    <div class="row"><dt>Duration</dt><dd>{{ duration }}</dd></div>
-    <div class="row"><dt>Location</dt><dd>{{ location }}</dd></div>
+    {% if system %}<div class="row"><dt>Roof system</dt><dd>{{ system }}</dd></div>{% endif %}
+    {% if size %}<div class="row"><dt>Job size</dt><dd>{{ size }}</dd></div>{% endif %}
+    {% if duration %}<div class="row"><dt>Duration</dt><dd>{{ duration }}</dd></div>{% endif %}
+    {% if location %}<div class="row"><dt>Location</dt><dd>{{ location }}</dd></div>{% endif %}
   </dl>
 </div>
 

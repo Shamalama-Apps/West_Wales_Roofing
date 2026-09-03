@@ -262,3 +262,15 @@ p{text-wrap:pretty}
   .slide-card h2{font-size:28px}
   .slide-count{align-self:flex-end}
 }
+
+/* long-form legal / prose pages */
+.prose{max-width:44em;padding-top:56px;padding-bottom:80px}
+.prose h1{font:800 44px/1.05 var(--disp);margin:14px 0 0}
+.prose .lede{font:400 19px/1.6 var(--body);color:var(--ink-2);margin:18px 0 0}
+.prose .updated{font:500 13px var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-top:14px}
+.prose h2{font:700 24px/1.2 var(--disp);margin:40px 0 0;padding-top:20px;border-top:1px solid var(--line)}
+.prose p{font:400 17px/1.65 var(--body);color:var(--muted);margin:14px 0 0}
+.prose ul{margin:14px 0 0;padding-left:22px}
+.prose li{font:400 17px/1.65 var(--body);color:var(--muted);margin-bottom:6px}
+.prose strong{color:var(--ink)}
+@media (max-width:900px){ .prose h1{font-size:32px} }

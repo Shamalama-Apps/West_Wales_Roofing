@@ -30,9 +30,9 @@ permalink: /work/index.html
         <h2>{{ job.data.title }}</h2>
         <p>{{ job.data.overview }}</p>
         <div class="slide-specs">
-          <div><div class="k">System</div><div class="v">{{ job.data.system }}</div></div>
-          <div><div class="k">Size</div><div class="v">{{ job.data.size }}</div></div>
-          <div><div class="k">On site</div><div class="v">{{ job.data.duration }}</div></div>
+          {% if job.data.system %}<div><div class="k">System</div><div class="v">{{ job.data.system }}</div></div>{% endif %}
+          {% if job.data.size %}<div><div class="k">Size</div><div class="v">{{ job.data.size }}</div></div>{% endif %}
+          {% if job.data.duration %}<div><div class="k">On site</div><div class="v">{{ job.data.duration }}</div></div>{% endif %}
         </div>
         <a class="btn btn-red" href="{{ job.url }}">See this job &rarr;</a>
       </div>

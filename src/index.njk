@@ -37,7 +37,7 @@ permalink: /index.html
       <div class="job-cat">{{ job.data.category }}</div>
       <div class="job-card-title">{{ job.data.title }}</div>
       <p>{{ job.data.overview }}</p>
-      <div class="job-meta">{{ job.data.system }} &middot; {{ job.data.duration }}</div>
+      <div class="job-meta">{{ [job.data.system, job.data.duration] | select | join(" &middot; ") | safe }}</div>
     </a>
     {% endfor %}
   </div>
