@@ -1,7 +1,3 @@
----
-permalink: /admin/config.yml
-eleventyExcludeFromCollections: true
----
 backend:
   name: git-gateway
   repo: Shamalama-Apps/West_Wales_Roofing
@@ -9,22 +5,21 @@ backend:
   identity_url: https://auth.decapbridge.com/sites/be7291bb-7d2f-41a4-89db-76b05a4f4d35
   gateway_url: https://gateway.decapbridge.com
 
-  # Decap's own placeholders, not Nunjucks' — this file is a template, so they
-  # must be escaped or they render empty. author-login is deliberately omitted:
-  # the repo is public and it would publish the editor's login in git history.
+  # author-login is deliberately omitted: the repo is public and it would
+  # publish the editor's login into git history permanently.
   commit_messages:
-{% raw %}    create: Create {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+    create: Create {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
     update: Update {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
     delete: Delete {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
     uploadMedia: Upload "{{path}}" - {{author-name}} via DecapBridge
-    deleteMedia: Delete "{{path}}" - {{author-name}} via DecapBridge{% endraw %}
+    deleteMedia: Delete "{{path}}" - {{author-name}} via DecapBridge
 
 media_folder: src/uploads
 public_folder: /uploads
 
 publish_mode: simple
-site_url: {{ build.cmsBaseUrl }}
-logo_url: {{ build.cmsBaseUrl }}/logo.png
+site_url: https://west-wales-roofing.com
+logo_url: /logo.png
 
 collections:
   - name: jobs

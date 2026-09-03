@@ -30,6 +30,17 @@ Vanessa creates it in API Manager; Claude stores it in Keychain and uses it for
 every DNS task below. Not `domains:transfer`, not `domains:billing`.
 Optional — skip it and tasks 11–13 become manual instead.
 
+**4a.** ✅ **HTTPS on the live domain** — fixed 2026-09-03. GitHub's certificate
+was wedged from the earlier attempt when only two A records resolved; removing and
+re-adding the custom domain forced a re-check and it issued for both apex and www.
+Enforcement is on. Netlify will issue its own certificate at cutover.
+
+**4b.** ✅ **Site-wide SEO and structured data** — 2026-09-03. Per-page `@graph`:
+`RoofingContractor` + `WebSite` everywhere, `AboutPage`/`ContactPage`/`CollectionPage`
+by page, `BreadcrumbList` on work and job pages, `ItemList` of jobs, and a `Service`
+node per job built from the CMS fields. 404 and thanks are `noindex`. Validated as
+parsing JSON on every built page.
+
 ## Phase 2 — make the content true (before the domain points at it)
 
 **5.** ✅ **Service areas confirmed** — 2026-09-03. **Carmarthenshire and

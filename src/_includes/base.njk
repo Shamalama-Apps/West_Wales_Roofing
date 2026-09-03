@@ -6,7 +6,7 @@
 {% set pageTitle = titleFull if titleFull else title + " | " + site.name %}
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ description }}">
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if noindex %}<meta name="robots" content="noindex, follow">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
 <meta name="theme-color" content="#c93c30">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.name }}">
@@ -22,19 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RoofingContractor",
-  "name": "{{ site.name }}",
-  "url": "{{ site.url }}",
-  "image": "{{ site.url }}/logo.png",
-  "logo": "{{ site.url }}/logo.png",
-  "email": "{{ site.email }}",
-  "telephone": "{{ site.phoneIntl }}",
-  "priceRange": "££",
-  "address": { "@type": "PostalAddress", "addressRegion": "Wales", "addressCountry": "GB" },
-  "areaServed": [{% for a in site.areasList %}{ "@type": "AdministrativeArea", "name": "{{ a }}" }{% if not loop.last %},{% endif %}{% endfor %}]
-}
+{% include "schema.njk" %}
 </script>
 </head>
 <body>

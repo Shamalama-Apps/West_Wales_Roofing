@@ -31,6 +31,21 @@ edits, so keep its shape stable. Adding a field there means adding it to
 spell the areas out separately for search results and must be changed by hand to
 match. Changing one and not the others is the easy mistake.
 
+## src/admin/config.yml is deliberately NOT a template
+
+It is passthrough-copied, never rendered. Decap's own `{{title}}`, `{{slug}}` and
+`{{author-name}}` placeholders are the same syntax Nunjucks uses, so running this
+file through the template engine silently empties them — which shipped a blank
+`slug` and a `summary` of " — " before it was caught. Keep it static.
+
+## Structured data
+
+`src/_includes/schema.njk` emits one `@graph` per page, branching on the
+`pageType` front-matter field (`home`, `work`, `job`, `about`, `contact`). Job
+pages derive a `Service` node straight from the CMS fields, so new jobs get
+correct schema with no extra work. All string values go through `| dump` so
+apostrophes in copy cannot break the JSON.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

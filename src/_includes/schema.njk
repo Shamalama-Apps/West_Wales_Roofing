@@ -1,0 +1,96 @@
+{%- set biz = site.url + "/#business" -%}
+{%- set web = site.url + "/#website" -%}
+{%- set here = site.url + page.url -%}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RoofingContractor",
+      "@id": {{ biz | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "url": {{ site.url | dump | safe }},
+      "image": {{ (site.url + "/logo.png") | dump | safe }},
+      "logo": {{ (site.url + "/logo.png") | dump | safe }},
+      "email": {{ site.email | dump | safe }},
+      "telephone": {{ site.phoneIntl | dump | safe }},
+      "priceRange": "££",
+      "address": { "@type": "PostalAddress", "addressRegion": "Wales", "addressCountry": "GB" },
+      "areaServed": [
+        {%- for a in site.areasList %}
+        { "@type": "AdministrativeArea", "name": {{ a | dump | safe }} }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Roofing services",
+        "itemListElement": [
+          {%- for s in site.services %}
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ s.name | dump | safe }}, "description": {{ s.note | dump | safe }} } }{% if not loop.last %},{% endif %}
+          {%- endfor %}
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ web | dump | safe }},
+      "url": {{ site.url | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "publisher": { "@id": {{ biz | dump | safe }} },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": {% if pageType == "about" %}"AboutPage"{% elif pageType == "contact" %}"ContactPage"{% elif pageType == "work" %}"CollectionPage"{% else %}"WebPage"{% endif %},
+      "@id": {{ (here + "#page") | dump | safe }},
+      "url": {{ here | dump | safe }},
+      "name": {{ (titleFull if titleFull else title) | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "isPartOf": { "@id": {{ web | dump | safe }} },
+      "about": { "@id": {{ biz | dump | safe }} },
+      "inLanguage": "en-GB"
+    }
+    {%- if pageType == "work" or pageType == "job" %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": {{ (here + "#breadcrumb") | dump | safe }},
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ (site.url + "/") | dump | safe }} },
+        { "@type": "ListItem", "position": 2, "name": "Recent work", "item": {{ (site.url + "/work/") | dump | safe }} }
+        {%- if pageType == "job" %},
+        { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": {{ here | dump | safe }} }
+        {%- endif %}
+      ]
+    }
+    {%- endif %}
+    {%- if pageType == "work" %},
+    {
+      "@type": "ItemList",
+      "@id": {{ (here + "#jobs") | dump | safe }},
+      "numberOfItems": {{ collections.jobs | length }},
+      "itemListElement": [
+        {%- for job in collections.jobs %}
+        { "@type": "ListItem", "position": {{ loop.index }}, "name": {{ job.data.title | dump | safe }}, "url": {{ (site.url + job.url) | dump | safe }} }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    }
+    {%- endif %}
+    {%- if pageType == "job" %},
+    {
+      "@type": "Service",
+      "@id": {{ (here + "#job") | dump | safe }},
+      "name": {{ title | dump | safe }},
+      "description": {{ overview | dump | safe }},
+      "serviceType": {{ category | dump | safe }},
+      "provider": { "@id": {{ biz | dump | safe }} },
+      "areaServed": { "@type": "Place", "name": {{ location | dump | safe }} },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Roof system", "value": {{ system | dump | safe }} },
+        { "@type": "PropertyValue", "name": "Job size", "value": {{ size | dump | safe }} },
+        { "@type": "PropertyValue", "name": "Time on site", "value": {{ duration | dump | safe }} }
+      ]
+      {%- if hero %},
+      "image": {{ (site.url + hero) | dump | safe }}
+      {%- endif %}
+    }
+    {%- endif %}
+  ]
+}

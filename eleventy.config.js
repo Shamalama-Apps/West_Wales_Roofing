@@ -1,6 +1,6 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" })
-  eleventyConfig.addPassthroughCopy({ "src/admin/index.html": "admin/index.html" })
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" })
   eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" })
   eleventyConfig.addPassthroughCopy({ "logo.png": "logo.png" })
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" })
