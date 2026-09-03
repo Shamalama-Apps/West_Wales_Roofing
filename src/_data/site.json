@@ -1,18 +1,19 @@
 {
-  "name": "West Wales Roofing",
-  "url": "https://west-wales-roofing.com",
-  "tagline": "Slate, tile, flat and storm work across west Wales.",
-  "phoneDisplay": "07956 091794",
-  "phoneLink": "07956091794",
-  "phoneIntl": "+447956091794",
-  "email": "will@west-wales-roofing.com",
-  "owner": "Will",
-  "areasShort": "Carmarthenshire and Ceredigion",
-  "areasLong": "Carmarthenshire and Ceredigion",
+  "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion",
   "areasList": [
     "Carmarthenshire",
-    "Ceredigion"
+    "Ceredigion",
+    "Pembrokeshire"
   ],
+  "phoneLink": "07956091794",
+  "phoneIntl": "+447956091794",
+  "name": "West Wales Roofing",
+  "tagline": "Slate, tile, flat and storm work across west Wales.",
+  "url": "https://west-wales-roofing.com",
+  "owner": "Will",
+  "phoneDisplay": "07956 091794",
+  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion ",
+  "email": "will@west-wales-roofing.com",
   "services": [
     {
       "name": "Residential re-roofs",
