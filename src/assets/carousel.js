@@ -1,5 +1,6 @@
-// Slides are all in the DOM so crawlers and no-JS visitors get every job; this
-// only hides the inactive ones once JS is available.
+// Slides are all in the DOM and visible by default, so a failed script leaves a
+// readable stacked list rather than one job and five dead buttons. The .js class
+// on <html> is what hands display control over to this file.
 const root = document.querySelector('[data-carousel]')
 if (root) {
   const slides = [...root.querySelectorAll('[data-slide]')]
@@ -8,10 +9,7 @@ if (root) {
 
   const show = (n) => {
     i = (n + slides.length) % slides.length
-    slides.forEach((s, k) => {
-      s.hidden = k !== i
-      s.classList.toggle('is-active', k === i)
-    })
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i))
     dots.forEach((d, k) => d.classList.toggle('is-on', k === i))
   }
 
