@@ -49,13 +49,23 @@ briefly removed on Vanessa's instruction, then put back by Will through the CMS,
 and Vanessa confirmed his version. The counties are now named in the hero, the
 four page descriptions, the footer and the schema.
 
-**6.** 🧍 **Real photographs of real jobs.**
-The single biggest item. The whole site is built on the promise "every roof we
-finish goes on this site" and every image is currently a placeholder.
+**6.** 🧍🤖 **Real photographs.** 34 supplied in `work-photos/` (not in git,
+deliberately). Audited in `docs/PHOTO_AUDIT.md`: **19 are usable roofing work**
+in six date groups, **14 are interior carpentry** and cannot go on a roofing
+portfolio, and **3 need checking** because they look like they came from a
+property listing rather than Will's phone.
+→ Vanessa to fill in the job and town for each group, then Claude labels,
+  resizes and loads them.
 
 **7.** 🧍 **Will's real bio and background.**
 The About page copy is invented from the design canvas. It reads plausibly, which
 makes it worse, not better.
+
+**7a.** ⏸️ **Public liability insurance.** Will has none of his own yet; the work
+so far has been under another contractor's cover. He will insure when he starts
+taking his own jobs. **Nothing on the site claims he is insured, and nothing
+should until he is.** Note he is a sole trader with unlimited personal liability
+and his home address is now published, so the exposure is personal.
 
 **8.** 🧍 **Legal and trust details.** Checklist in `docs/LEGAL_CHECKLIST.md`.
 ✅ Trading disclosure done: sole trader, William Jenkins, 37 The Moorings,
