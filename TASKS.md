@@ -9,15 +9,11 @@ above it or simply matters more. Don't jump ahead — the ordering is deliberate
 
 ## Phase 1 — make the machine work (nothing else counts until these are done)
 
-**1.** 🧍 **Connect the GitHub repo to Netlify.**
-Until this is done the site only updates when someone deploys from a laptop, and
-publishing from the CMS commits without rebuilding. Everything downstream assumes it.
-→ SETUP.md §1
+**1.** ✅ **Connect the GitHub repo to Netlify.** — done 2026-09-03, verified by
+pushing a commit and watching Netlify build it unaided.
 
-**2.** 🧍 **Create the GitHub OAuth app, set the two env vars.**
-The CMS login does not work at all without it. Git Gateway is deprecated, so this
-site runs its own handler.
-→ SETUP.md §2
+**2.** ✅ **GitHub OAuth app + env vars.** — done 2026-09-03, login confirmed
+working. ⚠️ **Chrome only — the CMS login fails silently in Safari.** See SETUP.md §2.
 
 **3.** 🧍 **Add Will to the repo with Write access.**
 He needs a free GitHub account. If that's a dealbreaker, say so and I'll swap to

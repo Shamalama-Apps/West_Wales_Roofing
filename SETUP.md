@@ -35,6 +35,14 @@ so this site brings its own OAuth handler at `/api/auth`.
 3. Add Will as a collaborator on `Shamalama-Apps/West_Wales_Roofing` with
    **Write** access. He needs a free GitHub account to log into `/admin`.
 
+   ⚠️ **The CMS login works in Chrome and fails in Safari.** Confirmed
+   2026-09-03 on this site. The OAuth handshake completes and the token reaches
+   Decap, which then fails silently — Decap parses the token *before* closing the
+   popup, so when it throws you get a stuck popup, no error message anywhere, and
+   the login page unchanged. Root cause not identified. If Will is a Safari user
+   this will bite him with no clue what's wrong, so either tell him to use Chrome
+   or move to DecapBridge, which replaces this handshake entirely.
+
    *If a GitHub account for Will is a dealbreaker, the alternative is
    DecapBridge, which gives him an email/password login instead — it swaps the
    `backend` block in `src/admin/config.yml` and drops the two functions.*
