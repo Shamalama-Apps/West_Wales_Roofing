@@ -13,5 +13,5 @@ const hash = (...files) =>
 
 export default {
   year: new Date().getFullYear(),
-  assetHash: hash("src/assets/site.css", "src/assets/carousel.js"),
+  assetHash: hash("src/assets/site.css", "src/assets/carousel.js", "src/assets/form.js"),
 }

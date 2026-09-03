@@ -69,6 +69,17 @@ resets top and bottom padding to zero on every one of them, which silently
 flattened the whole site's vertical rhythm on mobile until it was spotted in the
 footer. Always use `padding-left` / `padding-right` longhand there.
 
+## Fonts are self-hosted, not from Google
+
+`src/assets/fonts/` holds woff2 files and the `@font-face` rules sit at the top
+of `site.css`. Do not reintroduce a `fonts.googleapis.com` link: it puts two
+blocking round trips to a third party in front of the first paint, and it is the
+only thing that would put a third party back into the privacy policy.
+
+Only four faces are used: Archivo 600/700/800 and Source Sans 3 400. Weight 500
+was folded into 600 deliberately. `latin-ext` is kept for the circumflexes in
+Welsh place names. Both families are OFL licensed, so self-hosting is permitted.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

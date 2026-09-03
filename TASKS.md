@@ -98,6 +98,25 @@ Disable Pages, delete the holding-page files from the repo root.
 Confirm DKIM exists, add DMARC (`p=none` to start), send a test in and out of
 `will@`, and check the first real form notification isn't filed as spam.
 
+**10a.** ✅ **UX review acted on** (2026-09-03). Full findings in
+`docs/UX_REVIEW.md`. All three critical items fixed: the number is readable on a
+phone, the contact page leads with how to reach Will rather than a form, and the
+hero calls and texts instead of pointing at the portfolio. Contrast, mobile
+overflow, cache busting, no-JS fallback and heading structure all fixed. Fonts
+are self-hosted, so no page waits on Google and the privacy policy names no third
+party beyond hosting and email.
+
+**10b.** 🧍 **Still open from the review, needing Vanessa or Will:**
+- **Testimonials.** Nothing on the site is another customer's words, which is
+  what a homeowner comparing roofers looks for hardest. Three quotes with a first
+  name and a village would do it, driven from `site.json`.
+- **"What happens when you ring."** Nothing tells a nervous person what follows
+  contact: when Will replies, whether looking costs anything, how long a written
+  quote takes, whether a deposit is wanted.
+- **A town and opening hours** for the `PostalAddress` in the structured data.
+  Currently it says only "Wales", which weakens the local pack for
+  "roofer near me".
+
 ## Phase 4 — get found
 
 **14.** 🧍 **Google Business Profile.** Biggest single lever for a local trade.
