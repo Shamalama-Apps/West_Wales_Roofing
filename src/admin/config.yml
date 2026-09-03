@@ -42,7 +42,9 @@ collections:
       - { label: On the website, field: live, pattern: true }
       - { label: Not shown yet, field: live, pattern: false }
       - { label: On the home page, field: featured, pattern: true }
+      - { label: Carpentry only, field: trade, pattern: Carpentry }
     view_groups:
+      - { label: Roofing or carpentry, field: trade }
       - { label: Type of job, field: category }
     editor:
       preview: false
@@ -61,6 +63,15 @@ collections:
         default: false
         hint: The home page shows three jobs. Your best work should be switched on here.
 
+      - name: trade
+        label: What kind of work was it?
+        widget: select
+        default: Roofing
+        options: [Roofing, Carpentry]
+        hint: >-
+          Roofing jobs appear on the home page and Recent work. Carpentry jobs
+          appear on the Carpentry page instead. This also decides the web address.
+
       - name: title
         label: What was the job?
         widget: string
@@ -77,6 +88,9 @@ collections:
           - Commercial / flat
           - Historic slate & tile
           - Storm & insurance repair
+          - Carpentry & joinery
+          - Timber framing
+          - Fitted furniture
 
       - name: location
         label: Town and county

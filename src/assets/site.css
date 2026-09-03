@@ -532,3 +532,4 @@ p{text-wrap:pretty}
 .thanks-urgent strong{font:700 16px var(--disp);color:var(--ink)}
 .thanks-urgent p{margin-top:4px;font-size:16px}
 .thanks-urgent a{font-weight:700;white-space:nowrap}
+.lede-narrow{font:400 18px/1.6 var(--body);color:var(--muted);max-width:60ch;padding-bottom:8px}

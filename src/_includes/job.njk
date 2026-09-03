@@ -1,12 +1,12 @@
 ---
 layout: base.njk
 ---
-{% set jobs = collections.jobs %}
+{% set jobs = collections.carpentry if trade == "Carpentry" else collections.jobs %}
 {% set idx = jobs | indexOfUrl(page.url) %}
 {% set nextJob = jobs | nextAfterUrl(page.url) %}
 
 <div class="wrap" style="padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-  <a class="sec-more" href="/work/">&larr; All work</a>
+  <a class="sec-more" href="{% if trade == "Carpentry" %}/carpentry/{% else %}/work/{% endif %}">&larr; All {% if trade == "Carpentry" %}carpentry{% else %}roofing{% endif %} jobs</a>
   <div style="font:600 12px var(--disp);letter-spacing:.12em;color:var(--grey)">{{ (idx + 1) | pad }} / {{ jobs.length | pad }}</div>
 </div>
 

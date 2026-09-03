@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pageType: work
+title: Carpentry
+description: "Alongside roofing, Will takes on carpentry: timber framing, stud walls, staircases and fitted joinery across Carmarthenshire, Pembrokeshire and Ceredigion."
+permalink: /carpentry/index.html
+---
+{% set jobs = collections.carpentry %}
+
+<div class="wrap page-head">
+  <div>
+    <div class="eyebrow">Also</div>
+    <h1>Carpentry</h1>
+  </div>
+  {%- if jobs.length %}<div class="count">{{ jobs.length }} job{% if jobs.length != 1 %}s{% endif %}</div>{% endif %}
+</div>
+
+<div class="wrap">
+  <p class="lede-narrow">Roofing is the main business, but {{ site.owner }} served his time with tools in his hands and takes on carpentry as well: timber framing, stud walls, staircases, and fitted joinery. If it is on your list and it is made of wood, ask him.</p>
+</div>
+
+{%- if jobs.length %}
+<div class="wrap">
+  <div class="work-list">
+    {% for job in jobs %}
+    <a class="job-card" href="{{ job.url }}">
+      <div class="job-thumb">
+        {% if job.data.hero %}<img src="{{ job.data.hero }}" alt="{{ job.data.title }}" sizes="(max-width:900px) 100vw, 560px">
+        {% else %}<span>{{ job.data.photoLabel }}</span>{% endif %}
+      </div>
+      <div class="job-cat">{{ job.data.category }}</div>
+      <h2 class="job-card-title">{{ job.data.title }}</h2>
+      <p>{{ job.data.overview }}</p>
+      <div class="job-meta">{{ [job.data.system, job.data.duration] | select | join(" &middot; ") | safe }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{%- endif %}
+
+<section class="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Something needs making or fixing?</h2>
+      <p>Ring and {{ site.owner }} answers the same day. Looking costs nothing.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-white" href="tel:{{ site.phoneLink }}">Call {{ site.phoneDisplay }}</a>
+      <a class="btn btn-ghost" href="/contact/">Send an enquiry</a>
+    </div>
+  </div>
+</section>

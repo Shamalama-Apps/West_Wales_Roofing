@@ -17,6 +17,17 @@ content managed through Decap CMS at `/admin`.
 - Don't commit bun lockfiles. Netlify CI runs `npm run build` against the
   committed `package-lock.json`; a stray bun lockfile makes CI ambiguous.
 
+## Two trades, one collection
+
+Every job is a markdown file in `src/jobs/`. A `trade` field of `Roofing` or
+`Carpentry` decides which listing it appears on and where it lives:
+`/work/<slug>/` or `/carpentry/<slug>/`. `collections.jobs` is roofing only, so
+the home page and Recent work are untouched by carpentry existing.
+
+Roofing leads deliberately. Carpentry is linked from the footer and the About
+page, never the main nav, so the site stays a clean signal for local roofing
+searches. Do not reinstate absolute claims like "roofs are all we do".
+
 ## Content model
 
 Jobs are markdown in `src/jobs/`, one file per job. Business details, service

@@ -59,16 +59,21 @@ does.
 **Question:** does Will want to advertise carpentry as well? If so that is a
 different site section and a different conversation. If not, these stay out.
 
-## Check before using (3 photos)
+## Resolved: the three that looked wrong (3 photos)
 
-`lp_image`, `lp_image (1)`, `lp_image (2)` — a mossy slate roof with vents. All
-three are 1920x1280 and carry the same timestamp, which is not what a phone
-produces. They look like they came from a property listing or a website rather
-than Will's camera.
+`lp_image`, `lp_image (1)`, `lp_image (2)` — a mossy slate roof with vents.
 
-**Do not publish these until we know where they came from.** If they are from an
-estate agent or another firm's site, using them is a copyright problem and, if
-they show someone else's work, a misrepresentation.
+I flagged these because all three were 1920x1280 with an identical timestamp,
+which a phone does not produce. **They are Will's own**: the EXIF names the same
+iPhone 17 Pro as every other photo in the folder. They are FaceTime screen grabs,
+which is why they are downscaled and stripped of the software and date tags that
+the ordinary photos carry.
+
+Safe to use. One practical note: at 1920x1280 they are much lower resolution than
+the 5712x4284 camera originals, but the largest size the site ever serves is
+1600px wide, so they are still adequate.
+
+- Job: ______________________  Town: ______________
 
 ---
 

@@ -44,11 +44,19 @@ export default function (eleventyConfig) {
 
   // Jobs marked draft stay out of the build entirely, so an unfinished job in
   // the CMS is never reachable by URL or sitemap.
-  eleventyConfig.addCollection("jobs", (api) =>
+  const published = (api) =>
     api
       .getFilteredByGlob("src/jobs/*.md")
       .filter((j) => j.data.live !== false)
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+
+  // "jobs" stays the roofing collection, so every existing roofing page is
+  // untouched by carpentry appearing.
+  eleventyConfig.addCollection("jobs", (api) =>
+    published(api).filter((j) => j.data.trade !== "Carpentry")
+  )
+  eleventyConfig.addCollection("carpentry", (api) =>
+    published(api).filter((j) => j.data.trade === "Carpentry")
   )
 
   eleventyConfig.addFilter("featuredFirst", (jobs) => [

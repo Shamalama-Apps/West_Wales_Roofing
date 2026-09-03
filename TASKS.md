@@ -61,6 +61,12 @@ property listing rather than Will's phone.
 The About page copy is invented from the design canvas. It reads plausibly, which
 makes it worse, not better.
 
+**6a.** ✅ **Carpentry section** added 2026-09-03. Roofing still leads: carpentry
+lives at `/carpentry/`, linked from the footer and About but not the main nav, so
+the roofing pages stay a clean search signal. Will picks Roofing or Carpentry in
+the CMS and the job routes itself. The hero no longer claims "roofs are all we do".
+→ Needs the 14 carpentry photos labelling before the page has anything on it.
+
 **7a.** ⏸️ **Public liability insurance.** Will has none of his own yet; the work
 so far has been under another contractor's cover. He will insure when he starts
 taking his own jobs. **Nothing on the site claims he is insured, and nothing
