@@ -12,24 +12,50 @@ const page = (status, payloadObj, human) => {
 <body style="font:16px/1.5 system-ui,sans-serif;padding:40px;max-width:34em">
 <h1 style="font-size:20px">${status === "success" ? "Signed in" : "Sign-in failed"}</h1>
 <p>${human}</p>
-<p style="color:#666">You can close this window.</p>
+<p style="color:#666">You can close this window.</p>\n<pre id="diag" style="background:#f4f2ee;padding:12px;font:12px ui-monospace,monospace;white-space:pre-wrap;border-left:4px solid #c93c30"></pre>
 <script>
 (function () {
+  var out = document.getElementById('diag')
+  var log = []
+  function say (line) { log.push(line); out.textContent = log.join('\n') }
+
   var message = 'authorization:github:${status}:${payload}'
+
+  if (!window.opener) {
+    say('PROBLEM: window.opener is not available.')
+    say('The link back to the CMS tab was lost during sign-in, so the token')
+    say('cannot be handed over. Tell Vanessa: "opener is null".')
+    return
+  }
+  say('opener: present')
+
+  var replied = false
   function receive (e) {
+    say('reply from ' + e.origin + ': ' + String(e.data).slice(0, 40))
     if (e.data !== 'authorizing:github') return
+    replied = true
     window.removeEventListener('message', receive, false)
     e.source.postMessage(message, e.origin)
+    say('token sent to the CMS')
   }
   window.addEventListener('message', receive, false)
-  // Retried briefly: if the opener has not attached its listener yet the first
+
+  // Retried: if the opener has not attached its listener yet, the first
   // announcement is lost and the login hangs with no way to tell why.
   var tries = 0
+  window.opener.postMessage('authorizing:github', '*')
   var timer = setInterval(function () {
-    if (!window.opener || ++tries > 20) return clearInterval(timer)
+    if (replied || ++tries > 20) {
+      clearInterval(timer)
+      if (!replied) {
+        say('PROBLEM: the CMS never answered after ' + tries + ' attempts.')
+        say('Tell Vanessa: "no reply from CMS".')
+      }
+      return
+    }
     window.opener.postMessage('authorizing:github', '*')
   }, 250)
-  if (window.opener) window.opener.postMessage('authorizing:github', '*')
+  say('announced to CMS, waiting for reply...')
 })()
 </script>
 </body></html>`
