@@ -181,6 +181,7 @@ collections:
           - { name: phoneLink, label: Phone number for tap-to-call, widget: string, hint: No spaces, e.g. 07956091794 }
           - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794, used by Google' }
           - { name: email, label: Email address, widget: string }
+          - { name: whatsapp, label: WhatsApp number, widget: string, required: false, hint: 'International form, no plus and no leading zero: 447956091794. Leave this empty to hide the WhatsApp button.' }
           - name: areasList
             label: Counties you cover
             widget: list
