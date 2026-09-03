@@ -45,7 +45,7 @@ p{text-wrap:pretty}
 /* header */
 .site-head{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px}
-.head-logo img{height:72px;width:auto}
+.head-logo img{height:48px;width:auto}
 .site-nav{display:flex;align-items:center;gap:28px}
 .site-nav a.navlink{font:600 13px var(--disp);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .site-nav a.navlink:hover,.site-nav a.navlink[aria-current=page]{color:var(--red)}
@@ -214,7 +214,7 @@ p{text-wrap:pretty}
 
 @media (max-width:900px){
   .wrap{padding:0 22px}
-  .head-logo img{height:52px}
+  .head-logo img{height:40px}
   .site-nav{gap:16px}
   .site-nav a.navlink{font-size:12px}
   .hero-card h1{font-size:36px}

@@ -105,15 +105,47 @@ Confirm DKIM exists, add DMARC (`p=none` to start), send a test in and out of
 **16.** 🤖 **Town pages** for local SEO, if the service area stays this broad.
 **17.** 🧍 **Checkatrade / TrustATrader** listings, if worth the fee.
 
----
+## Phase 5 — beyond the website
 
-## Done
+**18.** 🤖 **Quote and invoice tool: a single local HTML file.**
+Requested 2026-09-03. Will has nothing at all right now, so anything beats a
+blank page. Agreed approach: **one self-contained HTML file he opens from his own
+machine.** Not part of the website, not deployed, never on the internet.
 
-- Project, repo `Shamalama-Apps/West_Wales_Roofing`, holding page shipped
-- Spacemail MX + SPF confirmed live; site and form both use `will@`
-- Design canvas converted to a full Eleventy site — home, work carousel, job
-  detail, about, contact, thanks, 404, sitemap
-- Six seed jobs; drafts render no page at all
-- Decap CMS at `/admin` with a GitHub OAuth handler of our own
-- Netlify Forms wired to `will@`, tested end to end and the test deleted
-- Deployed and verified: https://west-wales-roofing.netlify.app
+Why this shape:
+
+- **No customer data ever leaves his laptop.** That sidesteps the blocker that
+  killed the CMS version: this repo is public, so quotes and invoices stored in
+  git would publish customer names, addresses and prices to anyone looking.
+- No account, no subscription, no server, nothing to expire.
+- The browser's own Print to PDF produces the document, so there is no PDF
+  library to maintain. A print stylesheet does the work.
+- It carries the West Wales Roofing branding, which off-the-shelf free tiers
+  usually will not.
+
+What it needs to do:
+
+- Quote and invoice from the same tool, and turn an accepted quote into an
+  invoice without retyping anything
+- Sequential numbering that cannot repeat or skip
+- Saved customers, so a repeat job does not mean retyping an address
+- Line items with quantities, VAT-ready but off by default until Will registers
+- Paid / unpaid marking, and a list of what is outstanding
+- Print to PDF, correctly laid out on A4
+
+⚠️ **The real risk is losing everything.** Data lives in that browser's local
+storage, which is wiped by clearing site data, does not follow him to another
+device, and vanishes with the laptop. HMRC expects records kept for six years.
+So the tool must ship with a prominent **Download backup** and **Restore backup**,
+and Will has to be told plainly: save the backup file to iCloud or Dropbox after
+every session, and keep every PDF.
+
+**Before building, consider the honest alternative:** Zoho Invoice has a free
+tier for sole traders that does all of the above with cloud backup, multi-device
+access and proper VAT handling. It beats a local file on every measure except
+branding and independence. The local tool is right if Will wants nothing tied to
+an account; Zoho is right if losing the data would be a disaster. Worth putting
+both to him in one sentence each.
+
+**18a.** 🧍 **Decide: local HTML tool, or Zoho Invoice free tier.** Ask Will which
+matters more, owning it outright or never losing it.
