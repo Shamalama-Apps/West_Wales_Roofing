@@ -57,9 +57,12 @@ finish goes on this site" and every image is currently a placeholder.
 The About page copy is invented from the design canvas. It reads plausibly, which
 makes it worse, not better.
 
-**8.** 🧍 **Legal and trust details.**
-Limited company? Company number and registered address for the footer. Public
-liability cover, trade bodies (NFRC, CompetentRoofer), guarantee length on new roofs.
+**8.** 🧍 **Legal and trust details.** Full checklist in `docs/LEGAL_CHECKLIST.md`.
+⚠️ Two things are legally required on the site itself and are missing: the
+trading disclosure (Will's name and an address for service, because "West Wales
+Roofing" is not his surname) and a geographic address. Separately, the 14 day
+right to cancel must be given in writing with every quote, and getting that wrong
+extends the window to twelve months.
 
 **9.** ✅ **Privacy policy** — written 2026-09-03, live at `/privacy/`, linked from
 the footer and from the form itself. Describes what the site actually does: no
