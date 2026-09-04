@@ -5,6 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>West Wales Roofing: owner login</title>
+
+<style>
+  /* Decap has no theming API, so this targets the semantic labels it emits into
+     its class names (AppHeader, SidebarNavLink and so on). Those are component
+     names rather than hashes, so they are reasonably stable, but they are not a
+     public interface.
+
+     Everything below only changes colour and typeface. Nothing is hidden, moved
+     or resized. If a future Decap release renames a class, the rule stops
+     applying and the default styling returns: the CMS still works, it just
+     stops matching the website. */
+
+  @font-face{
+    font-family:"Archivo";font-style:normal;font-weight:700;font-display:swap;
+    src:url("/assets/fonts/archivo-700-latin.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Archivo";font-style:normal;font-weight:800;font-display:swap;
+    src:url("/assets/fonts/archivo-800-latin.woff2") format("woff2");
+  }
+  @font-face{
+    font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:swap;
+    src:url("/assets/fonts/source-sans-3-400-latin.woff2") format("woff2");
+  }
+
+  :root{
+    --wwr-red:#c93c30;
+    --wwr-red-deep:#9e2c23;
+    --wwr-ink:#1c1b1a;
+  }
+
+  body,input,textarea,select,button{
+    font-family:"Source Sans 3",system-ui,-apple-system,sans-serif;
+  }
+  h1,h2,h3,[class*="cardTopHeading"],[class*="ColumnHeader"]{
+    font-family:"Archivo",system-ui,sans-serif;
+  }
+
+  /* the bar across the top */
+  [class*="AppHeader"]{background-color:var(--wwr-ink) !important}
+  [class*="AppHeaderButton"]:hover,[class*="AppHeaderLink"]:hover{
+    color:#fff !important;background-color:rgba(255,255,255,.14) !important;
+  }
+
+  /* anything Decap paints in its own blue becomes the brand red */
+  [class*="ActionButton"],[class*="publishedButton"]{
+    background-color:var(--wwr-red) !important;color:#fff !important;
+  }
+  [class*="ActionButton"]:hover,[class*="publishedButton"]:hover{
+    background-color:var(--wwr-red-deep) !important;
+  }
+  [class*="SidebarNavLink"][class*="Active"],[class*="sidebarNavLinkActive"]{
+    color:var(--wwr-red) !important;
+  }
+  [class*="TreeNavLink"]:hover,[class*="SidebarNavLink"]:hover{color:var(--wwr-red) !important}
+  [class*="fieldLabel"]{color:#33312d !important}
+
+  /* the login screen, which is the first thing anyone sees */
+  [class*="nc-root"] > div:first-child{background-color:#faf8f5}
+</style>
 </head>
 <body>
 <script src="https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js"></script>

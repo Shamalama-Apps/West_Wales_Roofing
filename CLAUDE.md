@@ -60,6 +60,19 @@ It is passthrough-copied, never rendered. Decap's own `{{title}}`, `{{slug}}` an
 file through the template engine silently empties them — which shipped a blank
 `slug` and a `summary` of " — " before it was caught. Keep it static.
 
+## The CMS is styled, carefully
+
+`src/admin/index.html` carries CSS that matches the editor to the site. Decap has
+no theming API, so it targets the semantic labels Decap emits into its class
+names (`AppHeader`, `SidebarNavLink`, `ActionButton`). Those are component names
+rather than hashes, so they are fairly stable, but they are not a public
+interface and a Decap upgrade may rename them.
+
+**Only ever recolour or set typefaces there. Never hide, move or resize
+anything.** Written that way, a renamed class means the rule stops applying and
+Decap's own styling returns: the CMS still works, it just stops matching the
+site. Layout overrides would fail far less gracefully.
+
 ## Structured data
 
 `src/_includes/schema.njk` emits one `@graph` per page, branching on the
