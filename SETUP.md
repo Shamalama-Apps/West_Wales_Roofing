@@ -42,7 +42,22 @@ and was removed once DecapBridge was proven. To go back: `git revert` the commit
 "Switch CMS auth to DecapBridge", restore the two functions from history, and
 re-create a GitHub OAuth app.
 
-## 3. Point DNS at Cloudflare (do this when the site is signed off)
+## 3. ✅ DNS and email — done
+
+The domain runs on Cloudflare nameservers (`patryk` / `princess`), the site is
+live at west-wales-roofing.com, `www` 301s to the apex with the path preserved,
+and GitHub Pages is retired.
+
+The contact form posts to the Worker at `/api/enquiry`, which sends through
+Resend from `send.west-wales-roofing.com` to Will's inbox, with the customer's
+address as the reply-to. **The `send.` subdomain is deliberate**: it keeps
+Resend's records away from the apex, where Spacemail's MX, SPF and DKIM live.
+All four survived the migration untouched.
+
+Two known gaps, neither stopping the form working: the API key wants rotating,
+and SPF and MX are missing on the `send.` subdomain. Both are in TASKS.md.
+
+## 3-old. ~~Point DNS at Cloudflare~~ (superseded)
 
 The domain currently serves the old coming-soon page from GitHub Pages. In the
 Spaceship DNS panel:
