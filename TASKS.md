@@ -145,6 +145,16 @@ party beyond hosting and email.
   7am to 7pm. ⚠️ **Days assumed Monday to Saturday** — confirm with Will, it is
   editable in the CMS under Site details.
 
+**10c.** 🤖 **Copy change, queued.** On `/work/`, "Seen something like your roof?"
+should become something warmer and more direct, along the lines of "Does your
+roof need our help?". Vanessa's wording, to settle when the rest of the copy pass
+happens.
+
+**10d.** 🧍 **Carpentry page is hidden.** Switched off in the CMS under Site
+details, so the page is not built at all and no link points at it. Turn it back
+on once there are carpentry jobs to show, and re-add the About paragraph
+mentioning it.
+
 ## Phase 4 — get found
 
 **14.** 🧍 **Google Business Profile.** Biggest single lever for a local trade.

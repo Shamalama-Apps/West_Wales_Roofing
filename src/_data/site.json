@@ -57,5 +57,6 @@
   "ownerFullName": "William Jenkins",
   "addressStreet": "37 The Moorings",
   "postcode": "SA43 3LJ",
-  "basedLine": "based on the border of Ceredigion and Pembrokeshire, with work spanning Carmarthenshire, Swansea and Cardiff"
+  "basedLine": "based on the border of Ceredigion and Pembrokeshire, with work spanning Carmarthenshire, Swansea and Cardiff",
+  "showCarpentry": false
 }
