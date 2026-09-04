@@ -1,0 +1,242 @@
+# NOT a template, passthrough-copied only. Decap's {{...}} placeholders share
+# Nunjucks' syntax, so rendering this file silently empties them.
+backend:
+  name: git-gateway
+  repo: Shamalama-Apps/West_Wales_Roofing
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/be7291bb-7d2f-41a4-89db-76b05a4f4d35
+  gateway_url: https://gateway.decapbridge.com
+
+  # author-login is deliberately omitted: the repo is public and it would
+  # publish the editor's login into git history permanently.
+  commit_messages:
+    create: Create {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+    update: Update {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+    delete: Delete {{collection}} "{{slug}}" - {{author-name}} via DecapBridge
+    uploadMedia: Upload "{{path}}" - {{author-name}} via DecapBridge
+    deleteMedia: Delete "{{path}}" - {{author-name}} via DecapBridge
+
+media_folder: src/uploads
+public_folder: /uploads
+
+publish_mode: simple
+site_url: https://west-wales-roofing.com
+logo_url: /logo.png
+
+collections:
+  - name: jobs
+    label: Jobs
+    label_singular: Job
+    description: >-
+      Every roof you work on goes here. Add the photos, write a few lines about
+      what the job involved, then turn on "Show this job on the website".
+      Anything left switched off stays private. It is not on the website at all,
+      not even at a hidden address.
+    folder: src/jobs
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} ({{location}})"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - { label: On the website, field: live, pattern: true }
+      - { label: Not shown yet, field: live, pattern: false }
+      - { label: On the home page, field: featured, pattern: true }
+      - { label: Carpentry only, field: trade, pattern: Carpentry }
+    view_groups:
+      - { label: Roofing or carpentry, field: trade }
+      - { label: Type of job, field: category }
+    editor:
+      preview: false
+    fields:
+      - name: live
+        label: Show this job on the website
+        widget: boolean
+        default: false
+        hint: >-
+          Leave this off while you are still working on it. You can save as often
+          as you like. Nothing appears on the website until this is switched on.
+
+      - name: featured
+        label: Show on the home page
+        widget: boolean
+        default: false
+        hint: The home page shows three jobs. Your best work should be switched on here.
+
+      - name: trade
+        label: What kind of work was it?
+        widget: select
+        default: Roofing
+        options: [Roofing, Carpentry]
+        hint: >-
+          Roofing jobs appear on the home page and Recent work. Carpentry jobs
+          appear on the Carpentry page instead. This also decides the web address.
+
+      - name: title
+        label: What was the job?
+        widget: string
+        required: true
+        hint: 'Keep it short, and say where: "Farmhouse re-roof, Pencader"'
+
+      - name: category
+        label: Type of job
+        widget: select
+        required: true
+        options:
+          - Residential re-roof
+          - New build
+          - Commercial / flat
+          - Historic slate & tile
+          - Storm & insurance repair
+          - Carpentry & joinery
+          - Timber framing
+          - Fitted furniture
+
+      - name: location
+        label: Town and county
+        widget: string
+        required: true
+        hint: 'e.g. "Pencader, Carmarthenshire". This helps people nearby find you on Google.'
+
+      - name: date
+        label: When did you finish it?
+        widget: datetime
+        required: true
+        date_format: DD/MM/YYYY
+        time_format: false
+        picker_utc: true
+        hint: Newest jobs show first.
+
+      - name: overview
+        label: The job in a sentence or two
+        widget: text
+        required: true
+        hint: >-
+          What was wrong and what you did about it. This is what people read on
+          the cards and in Google results, so it matters more than the long
+          write-up below.
+
+      - name: beforeAfter
+        label: Do you have a clear before and after photo?
+        widget: boolean
+        default: false
+        hint: >-
+          Turn this on only if the two photos really do show the same roof before
+          and after. The page then shows them large and side by side. Left off,
+          the page puts one photo next to the job details instead.
+
+      - name: hero
+        label: Main photo
+        widget: image
+        required: false
+        hint: The finished roof, ideally. Used on the cards and at the top of the job page.
+
+      - name: before
+        label: Before photo
+        widget: image
+        required: false
+
+      - name: after
+        label: After photo
+        widget: image
+        required: false
+
+      - name: gallery
+        label: More photos
+        widget: list
+        required: false
+        summary: "{{fields.caption}}"
+        label_singular: photo
+        hint: Work in progress, scaffold up, close-ups of the detail. Four or five is plenty.
+        fields:
+          - { name: image, label: Photo, widget: image }
+          - { name: caption, label: What it shows, widget: string, required: false }
+
+      - name: body
+        label: The full write-up
+        widget: markdown
+        required: false
+        hint: >-
+          A paragraph or two on what the job involved. Write it as you would
+          explain it to a customer.
+
+      - name: system
+        label: Roof system
+        widget: string
+        required: false
+        hint: 'e.g. "Welsh slate, lead valleys" or "Clay pantile"'
+
+      - name: size
+        label: Size of the roof
+        widget: string
+        required: false
+        hint: 'e.g. "2,100 sq ft"'
+
+      - name: duration
+        label: Time on site
+        widget: string
+        required: false
+        hint: 'e.g. "12 days"'
+
+      - name: photoLabel
+        label: Placeholder caption
+        widget: string
+        required: false
+        hint: >-
+          Only shown in the grey box where a photo would be, before you have
+          added one. You can ignore this once the job has real photos.
+
+  - name: settings
+    label: Site details
+    description: >-
+      Your phone number, email and the areas you cover. These appear on every
+      page of the website, so a change here changes the whole site.
+    editor:
+      preview: false
+    files:
+      - name: site
+        label: Contact details and areas
+        file: src/_data/site.json
+        fields:
+          - { name: name, label: Business name, widget: string }
+          - { name: owner, label: "Your first name (used in the copy)", widget: string }
+          - { name: phoneDisplay, label: "Phone number as people should read it", widget: string, hint: 'e.g. "07956 091794"' }
+          - { name: phoneLink, label: Phone number for tap-to-call, widget: string, hint: No spaces, e.g. 07956091794 }
+          - { name: phoneIntl, label: Phone number in international form, widget: string, hint: 'e.g. +447956091794, used by Google' }
+          - { name: email, label: Email address, widget: string }
+          - { name: ownerFullName, label: "Owner's full legal name", widget: string, required: false, hint: 'Legally required in the footer, because West Wales Roofing is a business name rather than a surname' }
+          - { name: addressStreet, label: House number and street, widget: string, required: false, hint: 'The address where legal documents can be served' }
+          - { name: postcode, label: Postcode, widget: string, required: false }
+          - { name: town, label: Town you are based in, widget: string, required: false, hint: 'Shown in the footer, and told to Google for near-me searches' }
+          - { name: county, label: County, widget: string, required: false }
+          - { name: openingLabel, label: "Hours, as people should read them", widget: string, required: false, hint: 'e.g. "7am to 7pm, Monday to Saturday"' }
+          - { name: openingFrom, label: Opening time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 07:00' }
+          - { name: openingTo, label: Closing time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 19:00' }
+          - name: openingDays
+            label: Days you work
+            widget: list
+            required: false
+            field: { name: day, label: Day, widget: string }
+            hint: 'One per line, spelled in full, e.g. Monday. Used by Google only'
+          - { name: whatsapp, label: WhatsApp number, widget: string, required: false, hint: 'International form, no plus and no leading zero: 447956091794. Leave this empty to hide the WhatsApp button.' }
+          - name: areasList
+            label: Counties you cover
+            widget: list
+            field: { name: area, label: County, widget: string }
+            hint: Used by Google to work out where you work. One county per line.
+          - { name: basedLine, label: "Where the firm is based, as a sentence", widget: string, required: false, hint: 'Reads after "Will and a small crew", so start with "based on..."' }
+          - { name: areasShort, label: "Areas, written out short", widget: string, hint: 'e.g. "Carmarthenshire, Pembrokeshire and Ceredigion"' }
+          - { name: areasLong, label: "Areas, written out in full", widget: string, hint: Appears in the footer and on the About page. }
+          - name: services
+            label: What you do
+            widget: list
+            label_singular: service
+            summary: "{{fields.name}}"
+            hint: Shown on the home page and the About page, and used by Google.
+            fields:
+              - { name: name, label: Service, widget: string }
+              - { name: note, label: One line describing it, widget: string }
+          - { name: heroImage, label: Main photo on the home page, widget: image, required: false, hint: A wide shot of a finished roof works best. It sits behind the text at the top of the home page. }
+          - { name: heroAlt, label: Describe that photo, widget: string, required: false, hint: One line, for people using a screen reader and for Google. }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: url, label: Website address, widget: string, hint: Do not change this unless the domain changes. }

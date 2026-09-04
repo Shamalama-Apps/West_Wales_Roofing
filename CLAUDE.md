@@ -1,6 +1,6 @@
 # West Wales Roofing — project rules
 
-Marketing site for a roofing firm. Eleventy 3 → `dist/`, hosted on **Cloudflare
+Marketing site for a roofing firm. Eleventy 3 → `_site/`, hosted on **Cloudflare
 Pages**, content managed through Decap CMS at `/admin`.
 
 Moved off Netlify on 2026-09-04 when its build credits ran out mid-project.

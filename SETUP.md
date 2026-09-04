@@ -13,7 +13,7 @@ Right now the site was deployed from a laptop. Until GitHub is connected,
 1. <https://app.netlify.com/projects/west-wales-roofing/configuration/deploys>
 2. **Link repository** → GitHub → authorise the Netlify GitHub App
 3. Pick `Shamalama-Apps/West_Wales_Roofing`, branch `main`
-4. Build command `npm run build`, publish directory `dist` (should prefill from `netlify.toml`)
+4. Build command `npm run build`, publish directory `_site` (should prefill from `netlify.toml`)
 
 ## 2. ✅ CMS login — done
 

@@ -8,7 +8,7 @@ Website for **West Wales Roofing** — <https://west-wales-roofing.com>
 | Email | Spacemail, one mailbox — `will@west-wales-roofing.com` |
 | Hosting | Netlify — project `west-wales-roofing`, <https://west-wales-roofing.netlify.app> |
 | Repo | `Shamalama-Apps/West_Wales_Roofing` |
-| Build | Eleventy 3 → `dist/` |
+| Build | Eleventy 3 → `_site/` |
 | CMS | Decap at `/admin`, GitHub backend, OAuth via Netlify Functions |
 | Forms | Netlify Forms → emails `will@west-wales-roofing.com` |
 
@@ -17,7 +17,7 @@ Website for **West Wales Roofing** — <https://west-wales-roofing.com>
 ```sh
 npm install        # or: bun install
 npm run dev        # local server with live reload
-npm run build      # writes dist/
+npm run build      # writes _site/
 ```
 
 Netlify's CI runs `npm run build` — `package-lock.json` is committed for that
