@@ -15,16 +15,31 @@ layout: base.njk
   <h1>{{ title }}</h1>
 </div>
 
+{%- if before and after %}
 <div class="wrap ba">
   <div>
-    <div class="shot">{% if before %}<img src="{{ before }}" alt="{{ title }} before the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager">{% endif %}</div>
+    <div class="shot"><img src="{{ before }}" alt="{{ title }} before the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager"></div>
     <div class="label">Before</div>
   </div>
   <div>
-    <div class="shot">{% if after %}<img src="{{ after }}" alt="{{ title }} after the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager">{% endif %}</div>
+    <div class="shot"><img src="{{ after }}" alt="{{ title }} after the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager"></div>
     <div class="label after">After</div>
   </div>
-</div>
+{%- else %}
+{%- set lead = [] %}
+{%- if hero %}{% set lead = (lead.push(hero), lead) %}{% endif %}
+{%- if before and before != hero %}{% set lead = (lead.push(before), lead) %}{% endif %}
+{%- if after and after != hero %}{% set lead = (lead.push(after), lead) %}{% endif %}
+{%- if lead.length %}
+<div class="wrap ba{% if lead.length == 1 %} ba-single{% endif %}">
+  {%- for img in lead %}
+  <div>
+    <div class="shot"><img src="{{ img }}" alt="{{ title }}" sizes="{% if lead.length == 1 %}(max-width:900px) 100vw, 1140px{% else %}(max-width:560px) 100vw, 50vw{% endif %}" loading="eager"></div>
+  </div>
+  {%- endfor %}
+{%- endif %}
+{%- endif %}
+
 
 <div class="wrap job-body">
   <div>

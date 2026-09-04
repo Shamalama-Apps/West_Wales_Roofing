@@ -533,3 +533,6 @@ p{text-wrap:pretty}
 .thanks-urgent p{margin-top:4px;font-size:16px}
 .thanks-urgent a{font-weight:700;white-space:nowrap}
 .lede-narrow{font:400 18px/1.6 var(--body);color:var(--muted);max-width:60ch;padding-bottom:8px}
+/* a single lead photo spans the width rather than sitting in half a grid */
+.ba-single{grid-template-columns:1fr}
+.ba-single .shot{height:auto;aspect-ratio:3/2}

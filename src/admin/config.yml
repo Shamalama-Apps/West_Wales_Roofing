@@ -215,6 +215,7 @@ collections:
             widget: list
             field: { name: area, label: County, widget: string }
             hint: Used by Google to work out where you work. One county per line.
+          - { name: basedLine, label: "Where the firm is based, as a sentence", widget: string, required: false, hint: 'Reads after "Will and a small crew", so start with "based on..."' }
           - { name: areasShort, label: "Areas, written out short", widget: string, hint: 'e.g. "Carmarthenshire, Pembrokeshire and Ceredigion"' }
           - { name: areasLong, label: "Areas, written out in full", widget: string, hint: Appears in the footer and on the About page. }
           - name: services
