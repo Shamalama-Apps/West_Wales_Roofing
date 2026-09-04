@@ -39,6 +39,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" })
   eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" })
   eleventyConfig.addPassthroughCopy({ "src/logo.png": "logo.png" })
+  eleventyConfig.addPassthroughCopy({ "src/og-image.jpg": "og-image.jpg" })
   eleventyConfig.addPassthroughCopy({ "src/logo-mark.png": "logo-mark.png" })
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" })
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" })
