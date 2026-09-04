@@ -544,7 +544,7 @@ p{text-wrap:pretty}
 .job-lead-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .job-facts h2{font:600 11px var(--disp);letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
 .job-facts .spec{border-top:2px solid var(--ink);padding-top:4px}
-.job-desc{padding-top:36px;max-width:78ch}
+.job-desc{padding-top:36px}
 .job-desc .lede{font:400 19px/1.6 var(--body);color:var(--ink-2);margin:0}
 .job-desc .writeup{font:400 17px/1.65 var(--body);color:var(--muted);margin-top:16px}
 
