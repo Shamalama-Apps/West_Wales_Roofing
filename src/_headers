@@ -10,4 +10,7 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  X-Frame-Options: SAMEORIGIN
+  # frame-ancestors supersedes X-Frame-Options and, unlike it, can name a second
+  # origin: the studio site embeds a live preview of this site in its case study.
+  # Everyone else is still refused, so clickjacking protection is intact.
+  Content-Security-Policy: frame-ancestors 'self' https://shamalama.co.uk
