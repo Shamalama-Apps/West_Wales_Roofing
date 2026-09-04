@@ -1,7 +1,7 @@
 # West Wales Roofing — project rules
 
 Marketing site for a roofing firm. Eleventy 3 → `_site/`, hosted on **Cloudflare
-Pages**, content managed through Decap CMS at `/admin`.
+Workers**, content managed through Decap CMS at `/admin`.
 
 Moved off Netlify on 2026-09-04 when its build credits ran out mid-project.
 
@@ -17,7 +17,8 @@ Worker itself returns.
 ## Hard rules
 
 - Never push to `main` without Vanessa's explicit instruction. `main` is the
-  production branch — Netlify deploys it, and the CMS commits straight to it.
+  production branch — Cloudflare builds and deploys it on push (about three to
+  four minutes), and the CMS commits straight to it.
 - **A job with `live: false` must never render a page.** That rule lives in
   `src/jobs/jobs.11tydata.js` as a `permalink` returning `false`. Filtering the
   collection alone is not enough — Eleventy still writes the file.
@@ -114,6 +115,42 @@ only thing that would put a third party back into the privacy policy.
 Only four faces are used: Archivo 600/700/800 and Source Sans 3 400. Weight 500
 was folded into 600 deliberately. `latin-ext` is kept for the circumflexes in
 Welsh place names. Both families are OFL licensed, so self-hosting is permitted.
+
+## The share card is a generated file
+
+`src/og-image.jpg` is the image every platform shows when the URL is shared. It
+is 1200×630 and hand-built, not a photograph and not the logo — it composites
+`src/uploads/hero.jpg` under a scrim with the brand typefaces. Passthrough-copied
+in `eleventy.config.js`, referenced from `base.njk`.
+
+It exists because the share image used to be `logo.png`, 225×100, which every
+platform upscaled over five times and centre-cropped to the middle few letters.
+X showed no card at all: a `summary` card needs at least 144×144. So the meta
+tags carry explicit `og:image:width`/`height` and `twitter:card` is
+`summary_large_image`. Do not point `og:image` at a logo again.
+
+Regenerating it needs the Archivo and Source Sans 3 woff2 files converted to ttf
+(fontTools) because PIL cannot read woff2. Rebuild it if the hero photo or the
+brand changes.
+
+**Previews are cached for days.** WhatsApp, Facebook and iMessage will keep
+serving the old card after a deploy. Force a refresh with Facebook's Sharing
+Debugger, or you will test a fix and conclude it failed.
+
+## The founder photo is a composite, and is meant to be replaced
+
+`src/uploads/will-founder.jpg` is a real photograph of Will taken on 4 September
+2026, with the branded t-shirt he had ordered but not yet received added by an AI
+editor. The generator's "AI" corner badge was cropped off; the crop was needed
+anyway, since the slot is 4:5 and the source was square.
+
+Two things follow. The chest logo is illegible scribble rather than the wordmark
+— invisible at the 22px it renders at, but real. And the photo is a stand-in:
+**swap it for an unedited photo once Will has the shirts.** It is one field in
+the CMS, `founderImage`, no deploy needed.
+
+Nothing else on this site is generated or retouched. Keep it that way — the
+portfolio's credibility is the product.
 
 ## Photographs: strip metadata before they go in src/uploads
 

@@ -54,7 +54,7 @@ and Vanessa confirmed his version. The counties are now named in the hero, the
 four page descriptions, the footer and the schema.
 
 **6.** ✅ **Real photographs, 4 September 2026.** Five real roofing jobs are live
-with 18 photographs: Cilgerran, Pembroke Dock, Ludchurch, Cardiff and Swansea.
+with 20 photographs: Cilgerran, Pembroke Dock, Ludchurch, Cardiff and Swansea.
 The invented seed jobs are gone. All metadata stripped, including GPS that
 pinpointed customers' homes.
 → Still to do: the four carpentry groups have no job details yet, so
@@ -117,6 +117,11 @@ originals never reach the repo. Only web-sized, metadata-stripped copies go into
 
 **10.** 🧍🤖 **Higher-resolution logo, then a full favicon set.**
 The supplied PNG is 225×100 and looks soft on any modern screen. SVG ideally.
+⚠️ This is not cosmetic any more. That 225×100 file was the site's share image
+until 4 September, and every platform upscaled it over five times and cropped
+the middle — see 10e. A vector logo would also let the share card be rebuilt at
+any size, and would fix the soft chest logo problem if a branded mock-up is ever
+needed again.
 
 ## Phase 3 — go live
 
@@ -159,6 +164,24 @@ party beyond hosting and email.
 
 **10c.** ✅ **Copy change done** — 4 September 2026. `/work/` now opens its call
 to action with "Does your roof need our help?".
+
+**10e.** ✅ **Link preview card** — 4 September 2026. Sharing the URL used to
+show `logo.png` (225×100) blown up and centre-cropped to the middle few letters;
+X dropped the card entirely, because a `summary` card needs at least 144×144.
+Now a purpose-built 1200×630 `src/og-image.jpg` with `twitter:card` set to
+`summary_large_image`. Regenerate it if the branding or the hero photo changes —
+see CLAUDE.md, "The share card is a generated file".
+→ Still to do: nothing, but note WhatsApp, Facebook and iMessage cache previews
+  for days. Force a refresh through Facebook's Sharing Debugger after any change.
+
+**10f.** ✅ **Founder photo on the About page** — 4 September 2026. Will under
+"The founder", left of the bio. `founderImage` / `founderAlt` in `site.json`,
+both registered in the CMS config.
+⚠️ **The shirt in that photo is a composite.** It is a real photo of Will taken
+that day, with the branded t-shirt he had ordered but not yet received added by
+an AI editor. The chest logo is illegible on close inspection — harmless at the
+22px it renders at, but it is not the real logo. **Replace the whole photo with
+an unedited one as soon as the shirts arrive.** One field in the CMS, no deploy.
 
 **10d.** 🧍 **Carpentry page is hidden.** Switched off in the CMS under Site
 details, so the page is not built at all and no link points at it. Turn it back
