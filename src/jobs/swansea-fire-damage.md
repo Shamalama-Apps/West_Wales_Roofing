@@ -10,6 +10,7 @@ role: Contracted through another firm, on site from start to finish
 date: 2025-05-15
 live: true
 featured: false
+beforeAfter: true
 overview: A local authority house with most of the roof burnt away. The structure was made good with load bearing beams before a new roof went on.
 hero: /uploads/swansea-fire-damage-after.jpg
 before: /uploads/swansea-fire-damage-before.jpg

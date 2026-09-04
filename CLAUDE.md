@@ -106,6 +106,20 @@ the trade. `/work/` opens by saying so plainly, and each job carries an optional
 `role` field describing his part. Never write copy implying these were jobs booked
 by West Wales Roofing, and never name a customer or anything that identifies one.
 
+## Job pages have two layouts
+
+A `beforeAfter` boolean in the front matter picks between them, and it is a CMS
+choice rather than something inferred, because two photos existing does not mean
+they show the same roof before and after.
+
+- **On**, with both images set: the pair runs full width, labelled, with the
+  description and job details in two columns beneath. This is the shape a real
+  transformation deserves.
+- **Off**: one photo sits beside the job details, the description runs full
+  width under it, and the gallery is a horizontal run.
+
+`src/_includes/spec.njk` holds the details table so both layouts share it.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

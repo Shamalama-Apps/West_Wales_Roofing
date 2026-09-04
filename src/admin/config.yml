@@ -116,6 +116,15 @@ collections:
           the cards and in Google results, so it matters more than the long
           write-up below.
 
+      - name: beforeAfter
+        label: Do you have a clear before and after photo?
+        widget: boolean
+        default: false
+        hint: >-
+          Turn this on only if the two photos really do show the same roof before
+          and after. The page then shows them large and side by side. Left off,
+          the page puts one photo next to the job details instead.
+
       - name: hero
         label: Main photo
         widget: image
