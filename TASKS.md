@@ -49,7 +49,14 @@ briefly removed on Vanessa's instruction, then put back by Will through the CMS,
 and Vanessa confirmed his version. The counties are now named in the hero, the
 four page descriptions, the footer and the schema.
 
-**6.** 🧍🤖 **Real photographs.** 34 supplied in `work-photos/` (not in git,
+**6.** ✅ **Real photographs, 4 September 2026.** Five real roofing jobs are live
+with 18 photographs: Cilgerran, Pembroke Dock, Ludchurch, Cardiff and Swansea.
+The invented seed jobs are gone. All metadata stripped, including GPS that
+pinpointed customers' homes.
+→ Still to do: the four carpentry groups have no job details yet, so
+  `/carpentry/` is still empty.
+
+**6z.** 🧍🤖 **Original notes on the photographs.** 34 supplied in `work-photos/` (not in git,
 deliberately). Audited in `docs/PHOTO_AUDIT.md`: **19 are usable roofing work**
 in six date groups, **14 are interior carpentry** and cannot go on a roofing
 portfolio, and **3 need checking** because they look like they came from a

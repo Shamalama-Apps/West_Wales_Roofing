@@ -1,9 +1,11 @@
 {
-  "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion",
+  "areasLong": "Carmarthenshire, Pembrokeshire and Ceredigion, and across to Swansea and Cardiff",
   "areasList": [
     "Carmarthenshire",
     "Pembrokeshire",
-    "Ceredigion"
+    "Ceredigion",
+    "Swansea",
+    "Cardiff"
   ],
   "phoneLink": "07956091794",
   "phoneIntl": "+447956091794",
@@ -12,7 +14,7 @@
   "url": "https://west-wales-roofing.com",
   "owner": "Will",
   "phoneDisplay": "07956 091794",
-  "areasShort": "Carmarthenshire, Pembrokeshire and Ceredigion",
+  "areasShort": "west Wales, Swansea and Cardiff",
   "email": "will@west-wales-roofing.com",
   "services": [
     {

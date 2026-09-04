@@ -2,7 +2,7 @@
 layout: base.njk
 pageType: work
 title: Recent work
-description: Photographs of every roof we finish. Re-roofs, new builds, flat roofs, historic slate and storm repairs across Carmarthenshire, Pembrokeshire and Ceredigion.
+description: Roofs Will has worked on. Re-roofs, flat roofs, chimney rebuilds, fire and storm damage across west Wales, Swansea and Cardiff.
 permalink: /work/index.html
 ---
 {% set jobs = collections.jobs %}
@@ -13,6 +13,10 @@ permalink: /work/index.html
     <h1>Recent work</h1>
   </div>
   <div class="count">{{ jobs.length }} jobs, newest first <span class="kbd-hint">&middot; use the arrows or &larr; &rarr; keys</span></div>
+</div>
+
+<div class="wrap">
+  <p class="lede-narrow">These are roofs {{ site.owner }} has worked on. Most were contracted through established firms, which is how the trade is learned and how most roofers work. {{ site.name }} is his own business now, and the standard on the roof is the same whoever the job is booked through.</p>
 </div>
 
 <section class="carousel" data-carousel aria-roledescription="carousel" aria-label="Recent jobs">

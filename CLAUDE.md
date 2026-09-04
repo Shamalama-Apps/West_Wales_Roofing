@@ -91,6 +91,21 @@ Only four faces are used: Archivo 600/700/800 and Source Sans 3 400. Weight 500
 was folded into 600 deliberately. `latin-ext` is kept for the circumflexes in
 Welsh place names. Both families are OFL licensed, so self-hosting is permitted.
 
+## Photographs: strip metadata before they go in src/uploads
+
+Phone photos carry GPS. Five of the originals pinpointed customers' homes, one of
+them a vulnerable person's. Anything going into `src/uploads/` must be run through
+`ImageOps.exif_transpose` (so rotation is baked into the pixels) and re-saved onto
+a blank canvas so no EXIF survives at all. Resize to 1800px on the long edge while
+you are there; the site never serves wider than 1600px.
+
+## The portfolio is contracted work, and says so
+
+Will has worked these roofs while contracting to other firms, which is normal in
+the trade. `/work/` opens by saying so plainly, and each job carries an optional
+`role` field describing his part. Never write copy implying these were jobs booked
+by West Wales Roofing, and never name a customer or anything that identifies one.
+
 ## Style
 
 - 2-space indent, no semicolons unless required
