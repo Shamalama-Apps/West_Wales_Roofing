@@ -15,45 +15,50 @@ layout: base.njk
   <h1>{{ title }}</h1>
 </div>
 
-{%- if before and after %}
-<div class="wrap ba">
-  <div>
-    <div class="shot"><img src="{{ before }}" alt="{{ title }} before the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager"></div>
-    <div class="label">Before</div>
-  </div>
-  <div>
-    <div class="shot"><img src="{{ after }}" alt="{{ title }} after the work" sizes="(max-width:560px) 100vw, 50vw" loading="eager"></div>
-    <div class="label after">After</div>
-  </div>
-{%- else %}
 {%- set lead = [] %}
-{%- if hero %}{% set lead = (lead.push(hero), lead) %}{% endif %}
-{%- if before and before != hero %}{% set lead = (lead.push(before), lead) %}{% endif %}
-{%- if after and after != hero %}{% set lead = (lead.push(after), lead) %}{% endif %}
-{%- if lead.length %}
-<div class="wrap ba{% if lead.length == 1 %} ba-single{% endif %}">
-  {%- for img in lead %}
-  <div>
-    <div class="shot"><img src="{{ img }}" alt="{{ title }}" sizes="{% if lead.length == 1 %}(max-width:900px) 100vw, 1140px{% else %}(max-width:560px) 100vw, 50vw{% endif %}" loading="eager"></div>
-  </div>
-  {%- endfor %}
-{%- endif %}
+{%- if before and after %}
+  {%- set lead = (lead.push(before), lead.push(after), lead) %}
+{%- else %}
+  {%- if hero %}{% set lead = (lead.push(hero), lead) %}{% endif %}
+  {%- if before and before != hero %}{% set lead = (lead.push(before), lead) %}{% endif %}
+  {%- if after and after != hero %}{% set lead = (lead.push(after), lead) %}{% endif %}
 {%- endif %}
 
-
-<div class="wrap job-body">
-  <div>
-    <p class="lede">{{ overview }}</p>
-    <div class="writeup">{{ content | safe }}</div>
+<div class="wrap job-top">
+  <div class="job-lead{% if lead.length > 1 %} job-lead-pair{% endif %}">
+    {%- if before and after %}
+    <div>
+      <div class="shot"><img src="{{ before }}" alt="{{ title }} before the work" sizes="(max-width:900px) 50vw, 330px" loading="eager"></div>
+      <div class="label">Before</div>
+    </div>
+    <div>
+      <div class="shot"><img src="{{ after }}" alt="{{ title }} after the work" sizes="(max-width:900px) 50vw, 330px" loading="eager"></div>
+      <div class="label after">After</div>
+    </div>
+    {%- else %}
+    {%- for img in lead %}
+    <div>
+      <div class="shot"><img src="{{ img }}" alt="{{ title }}" sizes="(max-width:900px) 100vw, {% if lead.length > 1 %}330{% else %}680{% endif %}px" loading="eager"></div>
+    </div>
+    {%- endfor %}
+    {%- endif %}
   </div>
-  <h2 class="vh">Job details</h2>
-  <dl class="spec">
-    {% if system %}<div class="row"><dt>Roof system</dt><dd>{{ system }}</dd></div>{% endif %}
-    {% if size %}<div class="row"><dt>Job size</dt><dd>{{ size }}</dd></div>{% endif %}
-    {% if duration %}<div class="row"><dt>Duration</dt><dd>{{ duration }}</dd></div>{% endif %}
-    {% if location %}<div class="row"><dt>Location</dt><dd>{{ location }}</dd></div>{% endif %}
-    {% if role %}<div class="row"><dt>Will's part</dt><dd>{{ role }}</dd></div>{% endif %}
-  </dl>
+
+  <div class="job-facts">
+    <h2>Job details</h2>
+    <dl class="spec">
+      {% if system %}<div class="row"><dt>Roof system</dt><dd>{{ system }}</dd></div>{% endif %}
+      {% if size %}<div class="row"><dt>Job size</dt><dd>{{ size }}</dd></div>{% endif %}
+      {% if duration %}<div class="row"><dt>Duration</dt><dd>{{ duration }}</dd></div>{% endif %}
+      {% if location %}<div class="row"><dt>Location</dt><dd>{{ location }}</dd></div>{% endif %}
+      {% if role %}<div class="row"><dt>Will's part</dt><dd>{{ role }}</dd></div>{% endif %}
+    </dl>
+  </div>
+</div>
+
+<div class="wrap job-desc">
+  <p class="lede">{{ overview }}</p>
+  <div class="writeup">{{ content | safe }}</div>
 </div>
 
 {% if gallery and gallery.length %}
