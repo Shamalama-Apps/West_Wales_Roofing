@@ -13,6 +13,7 @@ stops working.
 | MX | @ | `mx2.spacemail.com` | 0 |
 | TXT | @ | `v=spf1 include:spf.spacemail.com ~all` | |
 | TXT | `spacemail._domainkey` | the DKIM key below | |
+| SRV | `_autodiscover._tcp` | `0 0 443 autoconfig.spacemail.com` | 0 |
 
 DKIM value, one line, no spaces:
 
@@ -35,6 +36,16 @@ after the Worker's custom domain is working.
 ## Nameservers before the change
 
 `launch1.spaceship.net`, `launch2.spaceship.net`
+
+## What the automatic scan missed
+
+Cloudflare's import on 4 September picked up both MX records, the SPF and the
+SRV, but **not the DKIM record**. It had to be added by hand. Assume any future
+migration will miss it too.
+
+Equally, my own DNS-over-HTTPS scan missed the `_autodiscover` SRV record, which
+only surfaced because Cloudflare found it. Neither method is complete on its own:
+compare against the registrar's own panel.
 
 ## Two traps
 
