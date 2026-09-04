@@ -4,9 +4,15 @@ Marketing site for a roofing firm. Eleventy 3 → `dist/`, hosted on **Cloudflar
 Pages**, content managed through Decap CMS at `/admin`.
 
 Moved off Netlify on 2026-09-04 when its build credits ran out mid-project.
-Cloudflare's free tier has no build-minute cap. The contact form was the only
-thing tied to Netlify: it is now a Pages Function at `functions/api/enquiry.js`
-that emails through Resend. Headers live in `src/_headers`, not a toml file.
+
+It is a **Worker with static assets**, not a Pages project. Cloudflare steers new
+projects to Workers and Pages is in maintenance mode, so `wrangler.toml` uses
+`main` plus an `[assets]` binding, never `pages_build_output_dir`.
+
+`worker/index.js` routes `/api/enquiry` to the Resend handler and hands
+everything else to `env.ASSETS`. Headers live in `src/_headers`, copied into the
+build. Note that `_headers` applies to static assets only, not to anything the
+Worker itself returns.
 
 ## Hard rules
 

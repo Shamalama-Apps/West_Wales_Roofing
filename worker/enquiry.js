@@ -1,6 +1,5 @@
-// Cloudflare Pages Function. Replaces Netlify Forms: takes the contact form
-// POST, emails it to Will through Resend, and redirects to the thank you page.
-// Works without JavaScript in the browser, since it is an ordinary form post.
+// Takes the contact form POST, emails it to Will through Resend, and redirects
+// to the thank you page. An ordinary form post, so it works with JavaScript off.
 
 const FIELDS = ["name", "phone", "email", "address", "type", "when", "message"]
 
@@ -9,8 +8,7 @@ const seeOther = (url) => new Response(null, { status: 303, headers: { Location:
 const escapeHtml = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c])
 
-export async function onRequestPost(context) {
-  const { request, env } = context
+export async function handleEnquiry(request, env) {
   const origin = new URL(request.url).origin
 
   let form
