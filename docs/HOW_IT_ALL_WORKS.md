@@ -36,6 +36,10 @@ every change ever made. Free, and it means nothing can be permanently lost.
 **DecapBridge** is the login for the editor. It is what lets you sign in to
 change the site without needing a GitHub account of your own. Free.
 
+**Resend** carries enquiries from the website's form to your inbox. It is the
+postman for that one job and nothing else. Free at the volume a roofing firm
+sends.
+
 ---
 
 ## Changing the website yourself
@@ -71,10 +75,15 @@ There are two separate things here and they do not depend on each other.
 before the website existed. Nothing about the website touches it. Read it however
 you already do.
 
-**Enquiries from the website's form** are a different path. Somebody fills in the
-form, Cloudflare takes it and emails it straight to your normal inbox. You can
-hit reply and it goes back to the customer, because their address is set as the
-reply address.
+**Enquiries from the website's form** take a different path. Somebody fills in
+the form, Cloudflare hands it to Resend, and Resend emails it to your normal
+inbox. You can hit reply and it goes straight back to the customer, because their
+address is set as the reply address.
+
+They arrive from `enquiries@send.west-wales-roofing.com`, which is a sending-only
+address on a separate part of the domain. Nothing arrives there and nobody should
+write to it. It exists so that sending enquiries can never interfere with your
+actual mailbox.
 
 If that ever fails, the visitor is told plainly on screen and asked to ring you
 instead. It will not swallow an enquiry silently.
@@ -93,6 +102,7 @@ They open the customer's own phone.
 | Website hosting | Cloudflare | Free | — |
 | Storing the website | GitHub | Free | — |
 | Editor login | DecapBridge | Free | — |
+| Sending enquiries | Resend | Free | — |
 | The editor itself | Decap CMS | Free, open source | — |
 | **Total** | | **about £17 a year** | |
 
