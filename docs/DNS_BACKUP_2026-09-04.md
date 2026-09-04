@@ -47,6 +47,20 @@ Equally, my own DNS-over-HTTPS scan missed the `_autodiscover` SRV record, which
 only surfaced because Cloudflare found it. Neither method is complete on its own:
 compare against the registrar's own panel.
 
+## Resend's doubled subdomain is not a mistake
+
+Sending runs through Resend on the domain `send.west-wales-roofing.com`. Resend
+places its SPF and bounce MX on a `send.` subdomain of whatever you register, so
+those records correctly live at **`send.send.west-wales-roofing.com`**:
+
+| Record | Name |
+|---|---|
+| DKIM | `resend._domainkey.send.west-wales-roofing.com` |
+| SPF | `send.send.west-wales-roofing.com` |
+| MX (bounces) | `send.send.west-wales-roofing.com` |
+
+It reads like a typo. Deleting it would break SPF and bounce handling.
+
 ## Two traps
 
 1. **A domain may have only one SPF record.** When Cloudflare Email Sending is
