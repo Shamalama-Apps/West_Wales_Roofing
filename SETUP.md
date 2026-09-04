@@ -5,15 +5,19 @@ has, and they're in dependency order.
 
 ---
 
-## 1. Connect the repo to Netlify (required — nothing else updates without it)
+## 1. ✅ Hosting — done
 
-Right now the site was deployed from a laptop. Until GitHub is connected,
-**publishing from the CMS will commit but the site will not rebuild.**
+Live at **https://west-wales-roofing.vanessa-latchem.workers.dev**
 
-1. <https://app.netlify.com/projects/west-wales-roofing/configuration/deploys>
-2. **Link repository** → GitHub → authorise the Netlify GitHub App
-3. Pick `Shamalama-Apps/West_Wales_Roofing`, branch `main`
-4. Build command `npm run build`, publish directory `_site` (should prefill from `netlify.toml`)
+A **Cloudflare Worker with static assets**, not a Pages project: Cloudflare steers
+new projects to Workers and Pages is in maintenance mode. Every push to `main`
+rebuilds and deploys.
+
+- Build command `npm run build`, deploy command `npx wrangler deploy`
+- Output directory is `_site`, Eleventy's default. Cloudflare detects the
+  framework and applies that default, overriding `assets.directory` in
+  `wrangler.toml`, so the two must agree.
+- Moved off Netlify on 2026-09-04 when its build credits ran out mid-project.
 
 ## 2. ✅ CMS login — done
 
@@ -38,17 +42,15 @@ and was removed once DecapBridge was proven. To go back: `git revert` the commit
 "Switch CMS auth to DecapBridge", restore the two functions from history, and
 re-create a GitHub OAuth app.
 
-## 3. Point DNS at Netlify (do this when the site is signed off)
+## 3. Point DNS at Cloudflare (do this when the site is signed off)
 
 The domain currently serves the old coming-soon page from GitHub Pages. In the
 Spaceship DNS panel:
 
 - **Delete** the four `A` records for `@` pointing at `185.199.108–111.153`
 - **Delete** the `www` CNAME pointing at `shamalama-apps.github.io`
-- Add the records Netlify shows under
-  <https://app.netlify.com/projects/west-wales-roofing/configuration/domain>
-  after you add `west-wales-roofing.com` as a custom domain there
-  (an `A` record to Netlify's load balancer, and `www` as a CNAME)
+- Add `west-wales-roofing.com` as a custom domain on the Worker, and follow the
+  records Cloudflare gives you
 
 Leave the Spacemail `MX` and `SPF` records alone — they are unrelated to hosting
 and email will break if they are removed.
