@@ -565,3 +565,7 @@ p{text-wrap:pretty}
 @media (max-width:900px){
   .gallery-strip .gshot,.gallery-strip-one .gshot{flex:0 0 72vw}
 }
+.form-error{border:1.5px solid var(--red);border-left:5px solid var(--red);background:#fdf3f2;padding:16px 18px;margin-top:18px;max-width:56ch}
+.form-error[hidden]{display:none}
+.form-error strong{font:700 17px var(--disp);color:var(--red-d)}
+.form-error p{font:400 16px/1.55 var(--body);color:var(--ink-2);margin-top:5px}

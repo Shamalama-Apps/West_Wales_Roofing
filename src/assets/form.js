@@ -44,3 +44,13 @@ if (form) {
     } catch {}
   })
 }
+
+// The function redirects back with ?error= when an enquiry could not be sent.
+// Saying so plainly beats a silent failure the visitor never learns about.
+if (new URLSearchParams(location.search).has('error')) {
+  const box = document.querySelector('[data-form-error]')
+  if (box) {
+    box.hidden = false
+    box.scrollIntoView({ block: 'center', behavior: 'smooth' })
+  }
+}

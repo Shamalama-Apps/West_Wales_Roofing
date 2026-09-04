@@ -1,0 +1,5 @@
+# Cloudflare Pages. The build is a plain static site plus one function, so there
+# is nothing here beyond telling Cloudflare where the output lands.
+name = "west-wales-roofing"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-04"

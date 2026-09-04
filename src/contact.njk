@@ -8,6 +8,10 @@ permalink: /contact/index.html
 <div class="wrap contact-top">
   <div class="eyebrow eyebrow-red">Contact</div>
   <h1>Let us know what needs doing</h1>
+  <div class="form-error" data-form-error hidden role="alert">
+    <strong>That did not send.</strong>
+    <p>Something went wrong at our end, and nothing has reached {{ site.owner }}. Please ring <a href="tel:{{ site.phoneLink }}">{{ site.phoneDisplay }}</a> and he will pick it up straight away.</p>
+  </div>
   <p class="lede">Ring or text and {{ site.owner }} answers the same day. Send the form and he replies within one business day. Either way, coming to look costs nothing.</p>
 
   <div class="contact-grid">
@@ -43,8 +47,7 @@ permalink: /contact/index.html
 
     <div class="contact-main">
       <h2 class="vh">Send an enquiry</h2>
-      <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company" action="/thanks/">
-        <input type="hidden" name="form-name" value="enquiry">
+      <form name="enquiry" method="POST" action="/api/enquiry">
         <p hidden><label>Leave this empty: <input name="company"></label></p>
 
         <div class="field">

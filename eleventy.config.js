@@ -41,6 +41,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/logo.png": "logo.png" })
   eleventyConfig.addPassthroughCopy({ "src/logo-mark.png": "logo-mark.png" })
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" })
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" })
 
   // Jobs marked draft stay out of the build entirely, so an unfinished job in
   // the CMS is never reachable by URL or sitemap.

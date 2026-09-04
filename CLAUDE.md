@@ -1,7 +1,12 @@
 # West Wales Roofing — project rules
 
-Marketing site for a roofing firm. Eleventy 3 → `dist/`, hosted on Netlify,
-content managed through Decap CMS at `/admin`.
+Marketing site for a roofing firm. Eleventy 3 → `dist/`, hosted on **Cloudflare
+Pages**, content managed through Decap CMS at `/admin`.
+
+Moved off Netlify on 2026-09-04 when its build credits ran out mid-project.
+Cloudflare's free tier has no build-minute cap. The contact form was the only
+thing tied to Netlify: it is now a Pages Function at `functions/api/enquiry.js`
+that emails through Resend. Headers live in `src/_headers`, not a toml file.
 
 ## Hard rules
 
@@ -14,8 +19,8 @@ content managed through Decap CMS at `/admin`.
   and email are separate concerns on this domain.
 - No contact details on the site that Vanessa hasn't confirmed. A wrong phone
   number on a trades site is worse than no phone number.
-- Don't commit bun lockfiles. Netlify CI runs `npm run build` against the
-  committed `package-lock.json`; a stray bun lockfile makes CI ambiguous.
+- Don't commit bun lockfiles. CI runs `npm run build` against the committed
+  `package-lock.json`; a stray bun lockfile makes CI ambiguous.
 
 ## Two trades, one collection
 
