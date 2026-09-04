@@ -1,5 +1,9 @@
 # West Wales Roofing — priority queue
 
+> **The site is live at https://west-wales-roofing.com** as of 4 September 2026.
+> Everything below is content or growth work. Nothing is broken.
+
+
 One ordered backlog. Work top to bottom: each task is either blocked by the one
 above it or simply matters more. Don't jump ahead — the ordering is deliberate.
 
@@ -64,7 +68,9 @@ property listing rather than Will's phone.
 → Vanessa to fill in the job and town for each group, then Claude labels,
   resizes and loads them.
 
-**7.** 🧍 **Will's real bio and background.**
+**7.** ✅ **Will's biography** — his own words, added 4 September 2026.
+
+**7-old.** ~~Will's real bio and background.~~
 The About page copy is invented from the design canvas. It reads plausibly, which
 makes it worse, not better.
 
@@ -104,10 +110,10 @@ AVIF/WebP with a responsive srcset, capped at 1600px. Measured: a 5.9MB phone ph
 becomes 269KB at worst, a 95% reduction. ⚠️ Originals still live in git — see
 task 9c if that becomes a problem.
 
-**9c.** 🧍 **Decide whether photo originals should stay in git.** Every upload is
-committed at full size forever; twenty jobs at ten 5MB photos is a 1GB repo.
-Options: accept it, ask Will to send photos for resizing first, or move the media
-library to Cloudinary so originals never enter the repo.
+**9c.** ✅ **Resolved.** `work-photos/` is gitignored and the 130MB of camera
+originals never reach the repo. Only web-sized, metadata-stripped copies go into
+`src/uploads/`. A full copy of the originals is in iCloud under
+`Westwalesroofingpics`.
 
 **10.** 🧍🤖 **Higher-resolution logo, then a full favicon set.**
 The supplied PNG is 225×100 and looks soft on any modern screen. SVG ideally.
@@ -128,9 +134,9 @@ page it replaces. Leave the Spacemail MX and SPF records alone.
 holding page's `index.html`, `404.html`, `CNAME`, `robots.txt` and `sitemap.xml`
 removed from the repo root. The real versions are generated from `src/`.
 
-**13.** 🧍🤖 **Finish the email records.** *(needs 4 or manual)*
-Confirm DKIM exists, add DMARC (`p=none` to start), send a test in and out of
-`will@`, and check the first real form notification isn't filed as spam.
+**13.** ✅ **Email complete.** Spacemail untouched through the migration; the
+contact form sends through Resend from `send.west-wales-roofing.com`, with DKIM,
+SPF and bounce handling all verified.
 
 **10a.** ✅ **UX review acted on** (2026-09-03). Full findings in
 `docs/UX_REVIEW.md`. All three critical items fixed: the number is readable on a
