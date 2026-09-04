@@ -59,5 +59,7 @@
   "postcode": "SA43 3LJ",
   "basedLine": "based on the border of Ceredigion and Pembrokeshire, with work spanning Carmarthenshire, Swansea and Cardiff",
   "showCarpentry": false,
-  "hoursShort": "7am\u20137pm"
+  "hoursShort": "7am\u20137pm",
+  "aboutImage": "/uploads/pembroke-dock-2.jpg",
+  "aboutAlt": "Working up a roof, new membrane and battens down"
 }

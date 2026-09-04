@@ -20,7 +20,9 @@ permalink: /about/index.html
     </div>
   </div>
   <div>
-    <div class="portrait"><span>portrait: {{ site.owner }} on site</span></div>
+    {%- if site.aboutImage %}
+    <div class="portrait"><img src="{{ site.aboutImage }}" alt="{{ site.aboutAlt }}" sizes="(max-width:900px) 100vw, 540px"></div>
+    {%- endif %}
   </div>
 </div>
 

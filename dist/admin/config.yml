@@ -238,6 +238,8 @@ collections:
             fields:
               - { name: name, label: Service, widget: string }
               - { name: note, label: One line describing it, widget: string }
+          - { name: aboutImage, label: Photo on the About page, widget: image, required: false, hint: 'A portrait of Will works best here. A job photo does the job until there is one.' }
+          - { name: aboutAlt, label: Describe that photo, widget: string, required: false }
           - { name: heroImage, label: Main photo on the home page, widget: image, required: false, hint: A wide shot of a finished roof works best. It sits behind the text at the top of the home page. }
           - { name: heroAlt, label: Describe that photo, widget: string, required: false, hint: One line, for people using a screen reader and for Google. }
           - { name: tagline, label: Tagline, widget: string }

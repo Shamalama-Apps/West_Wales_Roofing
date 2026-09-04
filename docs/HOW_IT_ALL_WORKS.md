@@ -44,9 +44,10 @@ sends.
 
 ## Changing the website yourself
 
-Go to **west-wales-roofing.com/admin** and sign in with your own email address,
-`will@west-wales-roofing.com`, using the same password as your email. There is a
-link at the bottom of every page, marked "Owner login".
+Go to **west-wales-roofing.com/admin** and sign in with your own email address
+and password. There is a link at the bottom of every page, marked "Owner login".
+If you ever forget the password, use the reset link on that page; it works
+without anyone's help.
 
 **Jobs.** Add a new roof, upload the photos, write a few lines about what the job
 involved. The most important switch is **"Show this job on the website"**: leave

@@ -211,10 +211,10 @@ p{text-wrap:pretty}
 .about-top h1{font:800 48px/1.02 var(--disp);margin:14px 0 0}
 .about-top .lede{font:400 19px/1.6 var(--body);color:var(--ink-2);margin:20px 0 0}
 .about-top p.body{font:400 17px/1.65 var(--body);color:var(--muted);margin:16px 0 0}
-.stats{display:flex;gap:40px;margin-top:30px;padding-top:24px;border-top:2px solid var(--ink);flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;padding-top:24px;border-top:2px solid var(--ink)}
 .stats .n{font:800 34px var(--disp)}
 .stats .n.txt{font-size:26px;letter-spacing:-.01em}
-.stats .l{font:600 11px var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-top:4px}
+.stats .l{font:600 11px/1.3 var(--disp);letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-top:5px}
 .portrait{height:460px;background:var(--hatch);border:1px solid var(--line);display:flex;align-items:flex-end;padding:14px;position:relative;overflow:hidden}
 .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .portrait span{font:600 10px var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--grey-2)}
@@ -473,7 +473,7 @@ p{text-wrap:pretty}
 /* three across on one row: as a flex row with a 40px gap these wrapped onto two
    lines on a phone */
 @media (max-width:700px){
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+  .stats{gap:12px;text-align:center}
   .stats .n{font-size:30px}
   .stats .n.txt{font-size:19px}
   .stats .l{font-size:10px;letter-spacing:.08em;line-height:1.25}
