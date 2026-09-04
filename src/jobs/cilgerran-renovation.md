@@ -36,6 +36,10 @@ gallery:
     caption: Slate coming off
   - image: /uploads/cilgerran-7.jpg
     caption: Looking down the roof
+  - image: /uploads/cilgerran-8.jpg
+    caption: Slate back up the elevation, the old pots set aside on the boards
+  - image: /uploads/cilgerran-9.jpg
+    caption: The last courses still to go on, slate stacked ready
 ---
 The stack had been patched rather than repaired for years, and it showed. A crack running down through the brickwork had been sealed over with mastic instead of the brickwork being rebuilt. The flashing had been made good with whatever came to hand. The pots were sitting on loose rubble with daylight underneath, rather than bedded properly.
 
