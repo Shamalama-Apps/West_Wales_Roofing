@@ -210,6 +210,7 @@ collections:
           - { name: town, label: Town you are based in, widget: string, required: false, hint: 'Shown in the footer, and told to Google for near-me searches' }
           - { name: county, label: County, widget: string, required: false }
           - { name: openingLabel, label: "Hours, as people should read them", widget: string, required: false, hint: 'e.g. "7am to 7pm, Monday to Saturday"' }
+          - { name: hoursShort, label: "Hours, short form for the About page", widget: string, required: false, hint: 'e.g. "7am–7pm". Shown as a figure, so keep it short.' }
           - { name: openingFrom, label: Opening time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 07:00' }
           - { name: openingTo, label: Closing time for Google, widget: string, required: false, hint: '24 hour clock, e.g. 19:00' }
           - name: openingDays
