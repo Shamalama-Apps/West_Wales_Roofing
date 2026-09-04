@@ -223,6 +223,8 @@ p{text-wrap:pretty}
 .founder .role{font:400 16px var(--body);color:var(--muted-2);margin-top:8px}
 .founder p{font:400 17px/1.65 var(--body);color:var(--muted);margin:16px 0 0}
 .founder p.first{font-size:18px;color:var(--ink-2);margin:0}
+.founder-photo{margin-top:26px;aspect-ratio:4/5;background:var(--hatch);border:1px solid var(--line);overflow:hidden}
+.founder-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* contact */
 .contact-top{padding-top:56px}

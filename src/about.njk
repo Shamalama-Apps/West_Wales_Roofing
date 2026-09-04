@@ -32,6 +32,9 @@ permalink: /about/index.html
       <div class="eyebrow">The founder</div>
       <h2>{{ site.owner }}</h2>
       <div class="role">Owner, and the man who quotes your roof</div>
+      {%- if site.founderImage %}
+      <div class="founder-photo"><img src="{{ site.founderImage }}" alt="{{ site.founderAlt }}" sizes="(max-width:900px) 100vw, 420px"></div>
+      {%- endif %}
     </div>
     <div>
       <p class="first">{{ site.owner }} has been trained in the craft by local roofing and carpentry specialists, on private and commercial jobs across south and west Wales. His mission is to deliver an exceptional level of work to everyone, which includes respecting clients' homes and workplaces, as well as their time.</p>

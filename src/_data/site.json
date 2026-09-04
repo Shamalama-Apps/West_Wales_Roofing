@@ -61,5 +61,7 @@
   "showCarpentry": false,
   "hoursShort": "7am\u20137pm",
   "aboutImage": "/uploads/pembroke-dock-2.jpg",
-  "aboutAlt": "Working up a roof, new membrane and battens down"
+  "aboutAlt": "Working up a roof, new membrane and battens down",
+  "founderImage": "/uploads/will-founder.jpg",
+  "founderAlt": "Will sat on a roof part way through battening out"
 }
