@@ -1,0 +1,6 @@
+{%- for shot in gallery %}
+<figure class="gshot">
+  <img src="{{ shot.image }}" alt="{{ shot.caption or title }}" sizes="(max-width:900px) 90vw, 900px" loading="lazy">
+  {%- if shot.caption %}<figcaption>{{ shot.caption }}</figcaption>{% endif %}
+</figure>
+{%- endfor %}

@@ -120,6 +120,18 @@ they show the same roof before and after.
 
 `src/_includes/spec.njk` holds the details table so both layouts share it.
 
+## Job photographs open in a dialog
+
+`src/_includes/gallery-items.njk` holds the photo markup and is included twice:
+once inside a native `<dialog>`, once inside `<noscript>`. With JavaScript the
+button opens the dialog and the photos download only then; without it the
+noscript copy renders inline. The photos are never unreachable, and they are
+never downloaded twice, because a browser does not parse noscript content when
+scripting is on.
+
+The `<dialog>` element is doing the work: Escape, the backdrop and focus handling
+come free. Do not hand-roll a modal here.
+
 ## Style
 
 - 2-space indent, no semicolons unless required

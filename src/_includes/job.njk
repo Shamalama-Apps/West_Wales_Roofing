@@ -70,12 +70,29 @@ layout: base.njk
 
 {% if gallery and gallery.length %}
 <div class="wrap gallery">
-  <h2 class="gallery-head">On the job</h2>
-  <div class="gallery-grid">
-    {% for shot in gallery %}
-    <div class="shot"><img src="{{ shot.image }}" alt="{{ shot.caption or title }}" sizes="(max-width:900px) 72vw, 250px"></div>
-    {% endfor %}
-  </div>
+  {#- The photos live in the dialog, so with JavaScript they are downloaded only
+      when someone opens it. Without JavaScript the noscript block renders the
+      same photos inline instead, so they are never unreachable. -#}
+  <button type="button" class="btn btn-line gallery-open" data-gallery-open hidden>
+    {% if gallery.length == 1 %}See the photo from this job{% else %}See all {{ gallery.length }} photos from this job{% endif %}
+  </button>
+
+  <dialog class="lightbox" data-gallery aria-label="Photographs from {{ title }}">
+    <div class="lightbox-bar">
+      <span class="lightbox-title">{{ title }}</span>
+      <button type="button" class="lightbox-close" data-gallery-close aria-label="Close photographs">&times;</button>
+    </div>
+    <div class="lightbox-scroll">
+      {% include "gallery-items.njk" %}
+    </div>
+  </dialog>
+
+  <noscript>
+    <h2 class="gallery-head">On the job</h2>
+    <div class="gallery-static">
+      {% include "gallery-items.njk" %}
+    </div>
+  </noscript>
 </div>
 {% endif %}
 
