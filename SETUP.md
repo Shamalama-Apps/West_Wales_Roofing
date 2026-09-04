@@ -54,8 +54,10 @@ address as the reply-to. **The `send.` subdomain is deliberate**: it keeps
 Resend's records away from the apex, where Spacemail's MX, SPF and DKIM live.
 All four survived the migration untouched.
 
-Two known gaps, neither stopping the form working: the API key wants rotating,
-and SPF and MX are missing on the `send.` subdomain. Both are in TASKS.md.
+Authentication is complete: DKIM, SPF and bounce handling are all in place.
+Resend puts its SPF and bounce MX on a `send.` subdomain of the domain you
+register with it, so they sit at `send.send.west-wales-roofing.com`. The doubled
+name is correct and must not be tidied away.
 
 ## 3-old. ~~Point DNS at Cloudflare~~ (superseded)
 
