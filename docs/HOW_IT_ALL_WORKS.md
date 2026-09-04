@@ -6,8 +6,8 @@ Written for Will, 4 September 2026. No technical knowledge assumed.
 
 ## The short version
 
-The website costs roughly **£13 a year to run**, and almost all of that is the
-domain name and the email mailbox. The hosting, the software that lets you edit
+The website costs roughly **£17 a year to run**, and all of that is the domain
+name and the email mailbox. The hosting, the software that lets you edit
 the site, and everything else is free.
 
 Nothing needs a monthly subscription. Nothing will stop working if it is left
@@ -89,14 +89,15 @@ They open the customer's own phone.
 | What | Who | Roughly | How often |
 |---|---|---|---|
 | Domain name | Spaceship | £8 | Once a year |
-| Email mailbox | Spacemail | £5 | Once a year |
+| Email mailbox | Spacemail | £9 | Monthly, about $0.98 |
 | Website hosting | Cloudflare | Free | — |
 | Storing the website | GitHub | Free | — |
 | Editor login | DecapBridge | Free | — |
 | The editor itself | Decap CMS | Free, open source | — |
-| **Total** | | **about £13 a year** | |
+| **Total** | | **about £17 a year** | |
 
-Prices are converted from US dollars and will move a little. Check the actual
+Prices are converted from US dollars and will move a little. The mailbox is
+billed monthly at about $0.98, with the first month free. Check the actual
 figures in your Spaceship account.
 
 **Why so much is free:** Cloudflare does not charge for serving a site this size,
@@ -121,7 +122,8 @@ break by itself, so it is worth a calendar reminder for August 2027.
 both stop. Make sure the card on the Spaceship account is current, and turn on
 auto-renew if it is not already.
 
-**Mailbox renewal, once a year.** Same account, smaller amount.
+**Mailbox, billed monthly.** About $0.98 a month after the free first month.
+Same account as the domain, and if the card fails your email stops.
 
 ---
 

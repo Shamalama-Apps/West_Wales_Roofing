@@ -1,16 +1,16 @@
 ---
-title: Renovation re-roof and chimney rebuild, Cilgerran
+title: Re-roof and chimney removal, Cilgerran
 trade: Roofing
 category: Residential re-roof
 location: Cilgerran, Pembrokeshire
-system: Slate, rebuilt brick chimney
-size: Full roof and stack
+system: Slate, chimney taken down
+size: Full roof, stack removed
 duration: Ongoing
 role: Contracted through another firm, working on site throughout
 date: 2026-09-02
 live: true
 featured: true
-overview: A full re-roof and a chimney rebuilt from the shoulder up, as part of a larger renovation of the property.
+overview: A full re-roof with a redundant chimney taken down and the roof closed over where it stood, as part of a larger renovation.
 hero: /uploads/cilgerran-hero.jpg
 before: /uploads/cilgerran-before.jpg
 gallery:
@@ -19,16 +19,16 @@ gallery:
   - image: /uploads/cilgerran-2.jpg
     caption: Working across the roof
   - image: /uploads/cilgerran-3.jpg
-    caption: The stack part way through
+    caption: The stack coming down
   - image: /uploads/cilgerran-4.jpg
     caption: Battens and membrane
   - image: /uploads/cilgerran-5.jpg
-    caption: Chimney and scaffold
+    caption: Where the stack stood, scaffold up
   - image: /uploads/cilgerran-6.jpg
     caption: Slate coming off
   - image: /uploads/cilgerran-7.jpg
     caption: Looking down the roof
 ---
-The chimney had gone past repointing, so it came down to the shoulder and was rebuilt in brick before the roof went back over it. New membrane, battens, and the slate relaid around a dormer and a valley.
+The chimney was no longer in use and had gone past repair, so rather than patch it up it came down and the roof was closed over where it had stood. New membrane, battens, and the slate relaid around a dormer and a valley.
 
 The house is lived in and the work is part of a wider renovation, so the site is cleared at the end of every day and the scaffold sheeted.
