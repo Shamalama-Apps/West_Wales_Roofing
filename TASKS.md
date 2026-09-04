@@ -114,13 +114,19 @@ The supplied PNG is 225×100 and looks soft on any modern screen. SVG ideally.
 
 ## Phase 3 — go live
 
-**11.** 🧍🤖 **Repoint DNS from GitHub Pages to Netlify.** *(needs 1–10)*
+**11.** ✅ **DNS cutover done** — 4 September 2026. Nameservers moved from
+Spaceship to Cloudflare, the site is live on west-wales-roofing.com over HTTPS,
+and `www` 301s to the apex with the path preserved. All four Spacemail records
+survived intact.
+
+**11-old.** ~~Repoint DNS from GitHub Pages to Netlify.~~ *(superseded)*
 Deliberately last: a portfolio site with no photographs is worse than the holding
 page it replaces. Leave the Spacemail MX and SPF records alone.
 → SETUP.md §3
 
-**12.** 🤖 **Retire GitHub Pages.** *(needs 11)*
-Disable Pages, delete the holding-page files from the repo root.
+**12.** ✅ **GitHub Pages retired** — 4 September 2026. Pages disabled, and the
+holding page's `index.html`, `404.html`, `CNAME`, `robots.txt` and `sitemap.xml`
+removed from the repo root. The real versions are generated from `src/`.
 
 **13.** 🧍🤖 **Finish the email records.** *(needs 4 or manual)*
 Confirm DKIM exists, add DMARC (`p=none` to start), send a test in and out of

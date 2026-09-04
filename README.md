@@ -6,11 +6,11 @@ Website for **West Wales Roofing** — <https://west-wales-roofing.com>
 |---|---|
 | Domain | west-wales-roofing.com (registrar: Spaceship) |
 | Email | Spacemail, one mailbox — `will@west-wales-roofing.com` |
-| Hosting | Netlify — project `west-wales-roofing`, <https://west-wales-roofing.netlify.app> |
+| Hosting | Cloudflare Worker with static assets — live at <https://west-wales-roofing.com> |
 | Repo | `Shamalama-Apps/West_Wales_Roofing` |
 | Build | Eleventy 3 → `_site/` |
 | CMS | Decap at `/admin`, GitHub backend, OAuth via Netlify Functions |
-| Forms | Netlify Forms → emails `will@west-wales-roofing.com` |
+| Forms | Worker route `/api/enquiry` → emails `will@west-wales-roofing.com` |
 
 ## Running it
 
