@@ -71,3 +71,28 @@ It reads like a typo. Deleting it would break SPF and bounce handling.
 2. **Cloudflare's own MX for sending goes on a `cf-bounce` subdomain**, not the
    apex, so it does not displace Spacemail. If anything proposes changing the
    apex MX, stop.
+
+---
+
+# Update — 21 September 2026: mail moved from Spacemail to Google Workspace
+
+Will signed up for Google Workspace and asked for the MX to move. Changed in
+Cloudflare on 21 September 2026:
+
+| Type | Name | Value | Note |
+|---|---|---|---|
+| MX | @ | `smtp.google.com` priority 1 | replaced both Spacemail MX |
+| TXT | @ | `v=spf1 include:_spf.google.com include:spf.spacemail.com ~all` | drop the Spacemail include once Spacemail is cancelled |
+| TXT | `google._domainkey` | Google's 2048-bit DKIM key | generated in Admin console → Gmail → Authenticate email |
+| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:will@west-wales-roofing.com; adkim=r; aspf=r` | monitor only; tighten to quarantine after clean reports |
+| TXT | @ | `google-site-verification=…` | Workspace domain verification, keep |
+
+Untouched and must stay: everything on `send.` / `send.send.` (Resend). During
+the change the Google SPF include was briefly put on `send.send` by mistake and
+the Resend SPF restored to `v=spf1 include:amazonses.com ~all`.
+
+Still present, delete only after Spacemail is cancelled: `spacemail._domainkey`
+TXT, `_autodiscover._tcp` SRV, `include:spf.spacemail.com`.
+
+Old Spacemail mail does not follow the MX; migrate via Admin console → Data
+migration → IMAP (`imap.spacemail.com`:993) before cancelling.
