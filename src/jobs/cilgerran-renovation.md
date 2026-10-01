@@ -40,6 +40,10 @@ gallery:
     caption: Slate back up the elevation, the old pots set aside on the boards
   - image: /uploads/cilgerran-9.jpg
     caption: The last courses still to go on, slate stacked ready
+  - image: /uploads/cilgerran-complete-1.jpg
+    caption: Slate relaid across the main roof and the dormer, new guttering run along the eaves
+  - image: /uploads/cilgerran-complete-2.jpg
+    caption: The elevation with both dormers, slate carried through to the ridge
 ---
 The stack had been patched rather than repaired for years, and it showed. A crack running down through the brickwork had been sealed over with mastic instead of the brickwork being rebuilt. The flashing had been made good with whatever came to hand. The pots were sitting on loose rubble with daylight underneath, rather than bedded properly.
 
