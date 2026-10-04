@@ -10,7 +10,7 @@ date: 2026-09-02
 live: true
 featured: true
 overview: A chimney past saving, taken down rather than patched again, and a full re-roof around it as part of a larger renovation.
-hero: /uploads/cilgerran-hero.jpg
+hero: /uploads/cilgerran-complete-2.jpg
 before: /uploads/cilgerran-before.jpg
 gallery:
   - image: /uploads/cilgerran-stack.jpg
