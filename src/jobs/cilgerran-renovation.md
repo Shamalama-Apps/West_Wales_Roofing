@@ -5,7 +5,6 @@ category: Residential re-roof
 location: Cilgerran, Pembrokeshire
 system: Slate, chimney taken down
 size: Full roof, stack removed
-duration: Ongoing
 role: Contracted through another firm, working on site throughout
 date: 2026-09-02
 live: true
@@ -49,4 +48,4 @@ The stack had been patched rather than repaired for years, and it showed. A crac
 
 Left alone it would have come down on its own, so it came down under control instead, and the roof was closed over where it had stood. New membrane, battens, and the slate relaid around a dormer and a valley.
 
-The house is lived in and the work is part of a wider renovation, so the site is cleared at the end of every day and the scaffold sheeted.
+The house was lived in throughout and the work formed part of a wider renovation, so the site was cleared at the end of every day and the scaffold sheeted.
