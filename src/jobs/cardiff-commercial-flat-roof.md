@@ -1,20 +1,22 @@
 ---
-title: Commercial flat roof, Cardiff
-trade: Roofing
-category: Commercial / flat
-location: Cardiff
-system: Fibreglass over new OSB deck
-size: Commercial flat roof
-duration: One week
-role: Contracted through another firm, one of three on site
-date: 2026-07-07
 live: true
 featured: false
-overview: A leaking flat roof on a company building. The old rubber covering came off, a new deck went down, and it was finished in fibreglass.
+trade: Roofing
+title: Commercial flat roof, Cardiff
+category: Commercial / flat
+location: Cardiff
+date: 2026-07-07
+overview: A leaking flat roof on a company building. The old rubber covering
+  came off, a new deck went down, and it was finished beautifully in fibreglass.
+beforeAfter: false
 hero: /uploads/cardiff-flat-roof-hero.jpg
 gallery:
   - image: /uploads/cardiff-flat-roof-1.jpg
     caption: New deck down, scaffold still up
+system: Fibreglass over new OSB deck
+size: Commercial flat roof
+duration: One week
+role: Contracted through another firm, one of three on site
 ---
 The existing EPDM rubber roof had failed and was letting water into the building. Rather than patch it, the covering came off and a new OSB deck was laid over the top.
 
