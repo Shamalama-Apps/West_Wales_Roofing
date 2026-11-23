@@ -82,10 +82,10 @@ the CMS and the job routes itself. The hero no longer claims "roofs are all we d
 
 **7a.** ✅ **Public liability insurance.** Will took out £1m public liability
 cover in November 2026. The homepage says "Fully insured, with public liability
-cover", deliberately without the figure; the health and safety page offers the
+cover through Simply Business", deliberately without the figure; the health and safety page offers the
 certificate on request. Never publish the policy or certificate number.
-→ William manages the renewal himself. The insurer's name goes on the homepage
-line only if he gives it to Vanessa. Councils and main contractors often ask for
+→ William manages the renewal himself. He named Simply Business (a broker, hence
+"through") on 2026-11-23; it is on the homepage and health and safety page. Councils and main contractors often ask for
 £2m–£5m, so he would need to raise the cover before tendering for that work.
 Employers' liability becomes legally required as soon as anyone works for him.
 

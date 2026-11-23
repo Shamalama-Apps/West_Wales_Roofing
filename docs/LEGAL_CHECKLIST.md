@@ -53,8 +53,8 @@ a template from Trading Standards or an accountant rather than writing one.
 
 - **Public liability insurance.** ✅ £1m cover taken out November 2026. Not
   legally required, but the single thing homeowners look for hardest. The
-  homepage says "Fully insured, with public liability cover", without the
-  figure. The insurer's name is added only if Will supplies it. Never publish
+  homepage says "Fully insured, with public liability cover through Simply
+  Business", without the figure. Simply Business is the broker, added 2026-11-23. Never publish
   the policy or certificate number. Will manages renewal himself.
 - **Employers' liability insurance.** Legally required as soon as he employs
   anyone, even one person part time, and the certificate must be available to
