@@ -51,9 +51,11 @@ a template from Trading Standards or an accountant rather than writing one.
 
 ## 3. Must exist in the business, and worth showing on the site
 
-- **Public liability insurance.** Not legally required, but the single thing
-  homeowners look for hardest, and most will not book without it. Show the cover
-  amount and insurer.
+- **Public liability insurance.** ✅ £1m cover taken out November 2026. Not
+  legally required, but the single thing homeowners look for hardest. The
+  homepage says "Fully insured, with public liability cover", without the
+  figure. The insurer's name is added only if Will supplies it. Never publish
+  the policy or certificate number. Will manages renewal himself.
 - **Employers' liability insurance.** Legally required as soon as he employs
   anyone, even one person part time, and the certificate must be available to
   staff. Fines are per day without it.
@@ -98,10 +100,8 @@ because once it is indexed it is hard to take back.
 
 Still needed, in order of what they earn:
 
-1. **Public liability cover amount and insurer.** The single thing homeowners
-   check hardest. Not legally required, but it wins work.
-2. **The 14 day cancellation notice** to give with every quote. Not a website
+1. **The 14 day cancellation notice** to give with every quote. Not a website
    item, but the highest-risk gap in the business.
-3. **Waste carrier registration** with Natural Resources Wales.
-4. Any trade body memberships he actually holds.
-5. Guarantee length on new roofs, if he offers one.
+2. **Waste carrier registration** with Natural Resources Wales.
+3. Any trade body memberships he actually holds.
+4. Guarantee length on new roofs, if he offers one.

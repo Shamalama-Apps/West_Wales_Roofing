@@ -84,11 +84,10 @@ the CMS and the job routes itself. The hero no longer claims "roofs are all we d
 cover in November 2026. The homepage says "Fully insured, with public liability
 cover", deliberately without the figure; the health and safety page offers the
 certificate on request. Never publish the policy or certificate number.
-→ Still needed: insurer name and **renewal date** (the site must not claim cover
-after it lapses). Check the policy covers heat work and has no height limit that
-rules out chapels or commercial units. Councils and main contractors often ask
-for £2m–£5m, so raise it before tendering for that work. Employers' liability
-becomes legally required as soon as anyone works for him.
+→ William manages the renewal himself. The insurer's name goes on the homepage
+line only if he gives it to Vanessa. Councils and main contractors often ask for
+£2m–£5m, so he would need to raise the cover before tendering for that work.
+Employers' liability becomes legally required as soon as anyone works for him.
 
 **8.** 🧍 **Legal and trust details.** Checklist in `docs/LEGAL_CHECKLIST.md`.
 ✅ Trading disclosure done: sole trader, William Jenkins, 37 The Moorings,
@@ -96,7 +95,7 @@ St Dogmaels. In the footer, the privacy policy and the structured data.
 ⚠️ **Postcode still needed** to complete the address.
 ⚠️ **Check Will is content to publish his home address** — legally required, but a
 service address is an accepted alternative and many sole traders use one.
-Still outstanding: public liability cover to display, the 14 day cancellation
+Still outstanding: the 14 day cancellation
 notice to issue with quotes, and waste carrier registration.
 
 **9.** ✅ **Privacy policy** — written 2026-09-03, live at `/privacy/`, linked from
