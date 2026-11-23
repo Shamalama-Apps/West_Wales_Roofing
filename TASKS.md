@@ -146,6 +146,23 @@ removed from the repo root. The real versions are generated from `src/`.
 contact form sends through Resend from `send.west-wales-roofing.com`, with DKIM,
 SPF and bounce handling all verified.
 
+**13a.** 🧍 **Next time Will is at his laptop: move his old Spacemail emails to
+Google, then cancel Spacemail.** Live mail has gone to Google Workspace since 21
+September 2026, but nothing confirms the old Spacemail mailbox was ever copied
+across. Spacemail Pro now warns that the connection has an issue and offers to
+remove it. Leave it until the old emails are copied, because removing the
+connection or cancelling the plan may delete them.
+1. Ask Will if he wants anything from the old mailbox (quotes, customer threads).
+   If not, skip to step 3.
+2. Google Admin console → Data → Data import & export → Data migration. Source:
+   other IMAP server, `imap.spacemail.com`, port 993 SSL. Sign in with
+   `will@west-wales-roofing.com` and his Spacemail password. Check the emails
+   show up in Gmail before going on.
+3. In Spacemail: remove the domain connection, then cancel Spacemail Pro.
+4. 🤖 In Cloudflare DNS, delete the `spacemail._domainkey` TXT and the
+   `_autodiscover._tcp` SRV records, and change the SPF record to
+   `v=spf1 include:_spf.google.com ~all`. Update `docs/DNS_BACKUP_2026-09-04.md`.
+
 **10a.** ✅ **UX review acted on** (2026-09-03). Full findings in
 `docs/UX_REVIEW.md`. All three critical items fixed: the number is readable on a
 phone, the contact page leads with how to reach Will rather than a form, and the

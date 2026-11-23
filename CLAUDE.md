@@ -22,8 +22,11 @@ Worker itself returns.
 - **A job with `live: false` must never render a page.** That rule lives in
   `src/jobs/jobs.11tydata.js` as a `permalink` returning `false`. Filtering the
   collection alone is not enough — Eleventy still writes the file.
-- Never remove the Spacemail `MX` or `SPF` records when changing DNS. Hosting
-  and email are separate concerns on this domain.
+- Mail is on Google Workspace (since 2026-09-21). Never touch the Google `MX`,
+  SPF, DKIM or DMARC records when changing DNS. Hosting and email are separate
+  concerns on this domain. The leftover Spacemail records (`spacemail._domainkey`,
+  `_autodiscover._tcp`, the SPF include) come out only after Spacemail is
+  cancelled. See TASKS.md 13a.
 - No contact details on the site that Vanessa hasn't confirmed. A wrong phone
   number on a trades site is worse than no phone number.
 - Don't commit bun lockfiles. CI runs `npm run build` against the committed
