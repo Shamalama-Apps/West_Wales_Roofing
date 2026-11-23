@@ -80,11 +80,15 @@ the roofing pages stay a clean search signal. Will picks Roofing or Carpentry in
 the CMS and the job routes itself. The hero no longer claims "roofs are all we do".
 → Needs the 14 carpentry photos labelling before the page has anything on it.
 
-**7a.** ⏸️ **Public liability insurance.** Will has none of his own yet; the work
-so far has been under another contractor's cover. He will insure when he starts
-taking his own jobs. **Nothing on the site claims he is insured, and nothing
-should until he is.** Note he is a sole trader with unlimited personal liability
-and his home address is now published, so the exposure is personal.
+**7a.** ✅ **Public liability insurance.** Will took out £1m public liability
+cover in November 2026. The homepage says "Fully insured, with public liability
+cover", deliberately without the figure; the health and safety page offers the
+certificate on request. Never publish the policy or certificate number.
+→ Still needed: insurer name and **renewal date** (the site must not claim cover
+after it lapses). Check the policy covers heat work and has no height limit that
+rules out chapels or commercial units. Councils and main contractors often ask
+for £2m–£5m, so raise it before tendering for that work. Employers' liability
+becomes legally required as soon as anyone works for him.
 
 **8.** 🧍 **Legal and trust details.** Checklist in `docs/LEGAL_CHECKLIST.md`.
 ✅ Trading disclosure done: sole trader, William Jenkins, 37 The Moorings,
